@@ -1,6 +1,6 @@
 'use strict';
 
-const MUSICSAVOR_SEARCH_URL = 'https://tastedive.com/api/similar'
+const MUSICSAVOR_SEARCH_URL = 'https://tastedive.com/api/similar';
 
 function getDataFromApi(searchTerm, callback) {
     const query = {
