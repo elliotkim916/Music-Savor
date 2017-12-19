@@ -23,8 +23,7 @@ function showInitialSearchData() {
     // console.log('clicked');
     if ($('.tease-read').attr('hidden'),
         $('.read-link').attr('hidden'),
-        $('.youtube-video').attr('hidden')
-){
+        $('.youtube-video').attr('hidden')){
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
         $('.youtube-video').prop('hidden', false);
@@ -43,7 +42,7 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     <h2 class="artist-name">${title}</h2>
     <h2>${style}</h2>
     <p class="tease-read" hidden>${tease}</p>
-    <p class="read-link" hidden>${read}</p>
+    <a href="${read}" class="read-link" target="_blank" hidden>Learn more</a>
     <p class="youtube-video" hidden>${ytURL}</p>
     `;
 }
