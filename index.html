@@ -8,16 +8,20 @@
 
     <body>
         <header>
-            <h1>Search for Related Artists</h1>
+            <h1>Music Savor</h1>
         </header>
 
         <div class="container">
             <form class="js-search-form">
                 <label for="query"></label>
-                <input type="text" class="js-query" title="music search" id="query">
+                <input type="text" class="js-query" title="music search" name="music-search" id="query">
                 <button type="submit" role="button">Search</button>
             </form>
         </div>
+        <div class="initial-search-results"></div>
+
+        <h2>Check out</h2>
+        <div class="related-search-results"></div>
         <script src="https://code.jquery.com/jquery.min.js"></script>
         <script src="index.js"></script>
     </body>
