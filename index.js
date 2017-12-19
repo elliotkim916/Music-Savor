@@ -18,21 +18,34 @@ function getDataFromApi(searchTerm, callback) {
     };
     $.ajax(query);
 }
+
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
+    event.preventDefault();
+    
     // console.log('clicked');
+    let youtubeVideo = $('.youtube-video').attr('videoID');
+    $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" 
+    src="https://www.youtube.com/embed/${youtubeVideo}" frameborder="0" class="iframe" hidden></iframe>`)
     if ($('.tease-read').attr('hidden'),
         $('.read-link').attr('hidden'),
-        $('.youtube-video').attr('hidden')){
+        $('.youtube-video').attr('hidden'),
+        $('.iframe').attr('hidden')) {
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
         $('.youtube-video').prop('hidden', false);
+        $('.iframe').prop('hidden', false);
+        
     } else {
         $('.tease-read').prop('hidden', true);
         $('.read-link').prop('hidden', true);
         $('.youtube-video').prop('hidden', true);
+        $('.iframe').prop('hidden', true);
+        
     }
+    
     })
+    $('.iframe').remove();
 }
 showInitialSearchData();
 
@@ -43,7 +56,7 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     <h2>${style}</h2>
     <p class="tease-read" hidden>${tease}</p>
     <a href="${read}" class="read-link" target="_blank" hidden>Learn more</a>
-    <p class="youtube-video" hidden>${ytURL}</p>
+    <a href="${ytURL}" videoID="${ytID}" class="youtube-video" hidden>Youtube Video</a>
     `;
 }
 
@@ -64,8 +77,8 @@ function displayMusicSavorSearchData(data) {
     let readMore = initialSearch.wUrl;
     let youtubeURL = initialSearch.yUrl;
     let youtubeID = initialSearch.yID;
-    $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL));
-
+    $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID));
+    
     let relatedSearch = data.Similar.Results;
     let results = '';
     let current;
