@@ -18,11 +18,33 @@ function getDataFromApi(searchTerm, callback) {
     };
     $.ajax(query);
 }
+function showInitialSearchData() {
+    $('.initial-search-results').on('click', '.artist-name', function(event) {
+    // console.log('clicked');
+    if ($('.tease-read').attr('hidden'),
+        $('.read-link').attr('hidden'),
+        $('.youtube-video').attr('hidden')
+){
+        $('.tease-read').prop('hidden', false);
+        $('.read-link').prop('hidden', false);
+        $('.youtube-video').prop('hidden', false);
+    } else {
+        $('.tease-read').prop('hidden', true);
+        $('.read-link').prop('hidden', true);
+        $('.youtube-video').prop('hidden', true);
+    }
+    })
+}
+showInitialSearchData();
 
-function renderInitalSearchResults(title, style) {
+function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     return `
     <h3>If you like</h3>
-    <h1>${title}</h1>
+    <h2 class="artist-name">${title}</h2>
+    <h2>${style}</h2>
+    <p class="tease-read" hidden>${tease}</p>
+    <p class="read-link" hidden>${read}</p>
+    <p class="youtube-video" hidden>${ytURL}</p>
     `;
 }
 
@@ -30,6 +52,7 @@ function renderRelatedSearchResults(data) {
     const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
     return `
     <h3>${name}</h3>
+    <h3>${type}</h3>
     `;
 }
 
@@ -42,7 +65,7 @@ function displayMusicSavorSearchData(data) {
     let readMore = initialSearch.wUrl;
     let youtubeURL = initialSearch.yUrl;
     let youtubeID = initialSearch.yID;
-    $('.initial-search-results').html(renderInitalSearchResults(name, type));
+    $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL));
 
     let relatedSearch = data.Similar.Results;
     let results = '';
@@ -58,7 +81,7 @@ function displayMusicSavorSearchData(data) {
             youtubeID: current.yID
         };
         results += renderRelatedSearchResults(relatedData);
-        console.log(results);
+        // console.log(results);
     }
     $('.related-search-results').html(results);
 }
@@ -70,6 +93,7 @@ function watchSubmit() {
         const query = queryTarget.val();
         queryTarget.val('');
         getDataFromApi(query, displayMusicSavorSearchData);
+        // $('.check-out').prop('hidden', false);
     })
 }
 
