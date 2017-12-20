@@ -26,11 +26,11 @@ function showInitialSearchData() {
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
         let youtubeVideo = $('.youtube-video').attr('videoID');
-        $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${youtubeVideo}" data-hidden="true" frameborder="0" class="iframe"></iframe>`);
+        $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${youtubeVideo}" frameborder="0" class="iframe"></iframe>`);
     } else {
         $('.tease-read').prop('hidden', true);
         $('.read-link').prop('hidden', true); 
-        $('iframe').remove();
+        $('.iframe').remove();
     } 
 });
 }
@@ -38,7 +38,7 @@ function showInitialSearchData() {
 function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     return `
     <h3>If you like</h3>
-    <a href="${title}" class="artist-name">${title}</a>
+    <a href="#" class="artist-name">${title}</a>
     <h2>${style}</h2>
     <p class="tease-read" hidden>${tease}</p>
     <a href="${read}" class="read-link" target="_blank" hidden>Learn more</a>
@@ -46,11 +46,32 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     `;
 }
 
+function showRelatedSearchData() {
+    $('.related-search-results').on('click', '.related-music-container', function(event) {
+    event.preventDefault();
+    if ($(this).find('.related-tease-read').attr('hidden')) {
+        $(this).find('.related-tease-read').prop('hidden', false);
+        $(this).find('.related-read-link').prop('hidden', false);
+        let relatedYoutubeVideo = $(this).find('.related-youtube-video').attr('ytubeID');
+        $('.related-read-link').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${relatedYoutubeVideo}" frameborder="0" class="iframe"></iframe>`);
+    } else {
+        $(this).find('.related-tease-read').prop('hidden', true);
+        $(this).find('.related-read-link').prop('hidden', true); 
+        $('.iframe').remove();
+    }
+});
+}
+
 function renderRelatedSearchResults(data) {
     const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
     return `
-    <a href="${name}">${name}</a>
+    <div class="related-music-container">
+    <a href="#" class="related-artist-name">${name}</a>
     <h3>${type}</h3>
+    <p class="related-tease-read" hidden>${teaser}</p>
+    <a href="${readMore}" class="related-read-link" target="_blank" hidden>Learn more</a>
+    <a href="${youtubeUrl}" ytubeID="${youtubeID}" class="related-youtube-video" hidden>Related Youtube Video</a><br>
+    </div>
     `;
 }
 
@@ -63,7 +84,6 @@ function displayMusicSavorSearchData(data) {
     let readMore = initialSearch.wUrl;
     let youtubeURL = initialSearch.yUrl;
     let youtubeID = initialSearch.yID;
-    
     $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID));
     showInitialSearchData();
     
@@ -84,6 +104,7 @@ function displayMusicSavorSearchData(data) {
         // console.log(results);
     }
     $('.related-search-results').html(results);
+    showRelatedSearchData();
 }
 
 function watchSubmit() {
