@@ -19,38 +19,18 @@ function getDataFromApi(searchTerm, callback) {
     $.ajax(query);
 }
 
-function removeYoutubeVideo() {
-    $('.initial-search-results').on('click', '.artist-name', function(event) {
-        console.log('clicked');
-        event.preventDefault();  
-        $('iframe').remove();
-    });
-}
-
-function appendYoutubeVideo() {
-    let youtubeVideo = $('.youtube-video').attr('videoID');
-    $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" 
-    src="https://www.youtube.com/embed/${youtubeVideo}" data-hidden="true" frameborder="0" class="iframe"></iframe>`);
-}
-
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
     event.preventDefault();  
-    appendYoutubeVideo();
-    removeYoutubeVideo();
-    
-    if ($('.tease-read').attr('hidden'),
-        $('.read-link').attr('hidden'),
-        $('.youtube-video').attr('hidden') ){
-
+    if ($('.tease-read').attr('hidden')){
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
-        $('.youtube-video').prop('hidden', false);
-         
+        let youtubeVideo = $('.youtube-video').attr('videoID');
+        $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${youtubeVideo}" data-hidden="true" frameborder="0" class="iframe"></iframe>`);
     } else {
         $('.tease-read').prop('hidden', true);
-        $('.read-link').prop('hidden', true);
-        $('.youtube-video').prop('hidden', true);  
+        $('.read-link').prop('hidden', true); 
+        $('iframe').remove();
     } 
 });
 }
@@ -83,7 +63,6 @@ function displayMusicSavorSearchData(data) {
     let readMore = initialSearch.wUrl;
     let youtubeURL = initialSearch.yUrl;
     let youtubeID = initialSearch.yID;
-    
     
     $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID));
     showInitialSearchData();
