@@ -19,40 +19,46 @@ function getDataFromApi(searchTerm, callback) {
     $.ajax(query);
 }
 
-function showInitialSearchData() {
+function removeYoutubeVideo() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
-    event.preventDefault();
-    
-    // console.log('clicked');
+        console.log('clicked');
+        event.preventDefault();  
+        $('iframe').remove();
+    });
+}
+
+function appendYoutubeVideo() {
     let youtubeVideo = $('.youtube-video').attr('videoID');
     $('.initial-search-results').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" 
-    src="https://www.youtube.com/embed/${youtubeVideo}" frameborder="0" class="iframe" hidden></iframe>`)
+    src="https://www.youtube.com/embed/${youtubeVideo}" data-hidden="true" frameborder="0" class="iframe"></iframe>`);
+}
+
+function showInitialSearchData() {
+    $('.initial-search-results').on('click', '.artist-name', function(event) {
+    event.preventDefault();  
+    appendYoutubeVideo();
+    removeYoutubeVideo();
+    
     if ($('.tease-read').attr('hidden'),
         $('.read-link').attr('hidden'),
-        $('.youtube-video').attr('hidden'),
-        $('.iframe').attr('hidden')) {
+        $('.youtube-video').attr('hidden') ){
+
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
         $('.youtube-video').prop('hidden', false);
-        $('.iframe').prop('hidden', false);
-        
+         
     } else {
         $('.tease-read').prop('hidden', true);
         $('.read-link').prop('hidden', true);
-        $('.youtube-video').prop('hidden', true);
-        $('.iframe').prop('hidden', true);
-        
-    }
-    
-    })
-    $('.iframe').remove();
+        $('.youtube-video').prop('hidden', true);  
+    } 
+});
 }
-showInitialSearchData();
 
 function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     return `
     <h3>If you like</h3>
-    <h2 class="artist-name">${title}</h2>
+    <a href="${title}" class="artist-name">${title}</a>
     <h2>${style}</h2>
     <p class="tease-read" hidden>${tease}</p>
     <a href="${read}" class="read-link" target="_blank" hidden>Learn more</a>
@@ -63,7 +69,7 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
 function renderRelatedSearchResults(data) {
     const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
     return `
-    <h3>${name}</h3>
+    <a href="${name}">${name}</a>
     <h3>${type}</h3>
     `;
 }
@@ -77,7 +83,10 @@ function displayMusicSavorSearchData(data) {
     let readMore = initialSearch.wUrl;
     let youtubeURL = initialSearch.yUrl;
     let youtubeID = initialSearch.yID;
+    
+    
     $('.initial-search-results').html(renderInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID));
+    showInitialSearchData();
     
     let relatedSearch = data.Similar.Results;
     let results = '';
