@@ -10,7 +10,7 @@ function getDataFromApi(searchTerm, callback) {
             q: `${searchTerm}`,
             type: 'music',
             info: 1,
-            limit: 10,
+            limit: 20,
             k: '293729-MusicSav-F68RALT7'
         },
         dataType: 'jsonp',
@@ -21,7 +21,10 @@ function getDataFromApi(searchTerm, callback) {
 
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
-    event.preventDefault();  
+    event.preventDefault();
+    $('.related-tease-read').prop('hidden', true);
+    $('.related-read-link').prop('hidden', true); 
+    $('.iframe').remove();  
     if ($('.tease-read').attr('hidden')){
         $('.tease-read').prop('hidden', false);
         $('.read-link').prop('hidden', false);
@@ -37,9 +40,9 @@ function showInitialSearchData() {
 
 function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
     return `
-    <h3>If you like</h3>
+    <h2>If you like</h2>
     <a href="#" class="artist-name">${title}</a>
-    <h2>${style}</h2>
+    <h3>${style}</h3>
     <p class="tease-read" hidden>${tease}</p>
     <a href="${read}" class="read-link" target="_blank" hidden>Learn more</a>
     <a href="${ytURL}" videoID="${ytID}" class="youtube-video" hidden>Youtube Video</a>
@@ -49,6 +52,11 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
 function showRelatedSearchData() {
     $('.related-search-results').on('click', '.related-music-container', function(event) {
     event.preventDefault();
+        $('.tease-read').prop('hidden', true);
+        $('.read-link').prop('hidden', true); 
+        $('.related-tease-read').prop('hidden', true);
+        $('.related-read-link').prop('hidden', true); 
+        $('.iframe').remove();
     if ($(this).find('.related-tease-read').attr('hidden')) {
         $(this).find('.related-tease-read').prop('hidden', false);
         $(this).find('.related-read-link').prop('hidden', false);
