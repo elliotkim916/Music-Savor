@@ -33,7 +33,6 @@ function showInitialSearchData() {
     } else {
         $('.tease-read').prop('hidden', true);
         $('.read-link').prop('hidden', true); 
-        $('.iframe').remove();
     } 
 });
 }
