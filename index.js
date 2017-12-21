@@ -51,21 +51,18 @@ function renderInitalSearchResults(title, style, tease, read, ytURL, ytID) {
 
 function showRelatedSearchData() {
     $('.related-search-results').on('click', '.related-music-container', function(event) {
-    event.preventDefault();
+        event.preventDefault();
+        let invisible = $(this).find('.related-tease-read').attr('hidden');
         $('.tease-read').prop('hidden', true);
         $('.read-link').prop('hidden', true); 
         $('.related-tease-read').prop('hidden', true);
         $('.related-read-link').prop('hidden', true); 
         $('.iframe').remove();
-    if ($(this).find('.related-tease-read').attr('hidden')) {
+    if (invisible) {
         $(this).find('.related-tease-read').prop('hidden', false);
         $(this).find('.related-read-link').prop('hidden', false);
         let relatedYoutubeVideo = $(this).find('.related-youtube-video').attr('ytubeID');
         $('.related-read-link').append(`<iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${relatedYoutubeVideo}" frameborder="0" class="iframe"></iframe>`);
-    } else {
-        $(this).find('.related-tease-read').prop('hidden', true);
-        $(this).find('.related-read-link').prop('hidden', true); 
-        $('.iframe').remove();
     }
 });
 }
@@ -109,7 +106,6 @@ function displayMusicSavorSearchData(data) {
             youtubeID: current.yID
         };
         results += renderRelatedSearchResults(relatedData);
-        // console.log(results);
     }
     $('.related-search-results').html(results);
     showRelatedSearchData();
@@ -125,6 +121,18 @@ function watchSubmit() {
         // $('.check-out').prop('hidden', false);
     })
 }
+
+// const WIKIPEDIA_SEARCH_URL = 'https://en.wikipedia.org/w/api.php?';
+// //wikipedia api ajax call
+// $.ajax({
+//     url: WIKIPEDIA_SEARCH_URL,
+//     dataType: 'json',
+//     data: {
+//         action: 'query',
+//         format: 'json',
+//     }
+   
+// });
 
 // $(watchSubmit);
 $(function(){
