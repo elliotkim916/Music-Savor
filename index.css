@@ -27,7 +27,7 @@ html {
 }
 
 .active {
-    max-height: 800px;
+    max-height: 1200px;
     transition: max-height 1s;
 }
 
@@ -103,11 +103,13 @@ a:hover {
 }
 
 p {
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .hide-initial-data-btn {
-
+    font-family: 'Cabin Condensed';
+    position: absolute;
+    left: 455px;
 }
 
 .tease-read-container {
