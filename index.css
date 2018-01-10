@@ -1,3 +1,107 @@
 .hidden {
     display: none;
   }
+
+body {
+    min-width: 100%;
+    min-height: 100%;
+    background-image: url('./img/travis-yewell-273488.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Cabin Condensed';
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+html {
+    min-width: 100%;
+    min-height: 100%; 
+}
+
+/* artist information slides up & down */
+.initial-data {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.active {
+    max-height: 600px;
+    transition: max-height 1s;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+/*  size of input */
+.query {
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+input[type="text"] {
+    font-size: 25px;
+}
+
+.search-button {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: 'Cabin Condensed';
+    font-size: 20px;
+}
+
+.search-results {
+    position: relative;
+    top: 75px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.js-search-results {
+    padding-left: 15px;
+    padding-right: 15px;
+     
+}
+
+.check-out {
+    padding-left: 15px;
+}
+
+.related-music-container {
+    padding-left: 15px;
+}
+
+a {
+    font-size: 25px;
+    color: black;
+}
+
+a:hover { 
+    color: white;
+}
+
+p {
+    font-size: 18px;
+}

@@ -4,24 +4,29 @@
         <meta charset="utf-8">
         <title>Music Savor</title>
         <link href="index.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     </head>
 
     <body>
         <header>
             <h1>Music Savor</h1>
+            
+            <h3>Search for your favorite artists and discover new artists that sound like them</h3>
         </header>
 
         <div class="container">
             <form class="js-search-form">
                 <label for="query"></label>
-                <input type="text" class="js-query" title="music search" name="music-search" id="query">
-                <button type="submit" role="button">Search</button>
+                <input type="text" class="js-query query" title="music search" name="music-search" id="query"><br>
+                <button type="submit" role="button" class="search-button">Search</button>
             </form>
         </div>
-        <div class="initial-search-results"></div>
 
-        <h2 class="check-out" hidden>Check out</h2>
-        <div class="related-search-results"></div>
+        <div class="search-results">
+            <div class="initial-search-results"></div>
+                <h2 class="check-out" hidden>Check out</h2>
+                <div class="related-search-results"></div>
+        </div>
 
         <script src="https://code.jquery.com/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>

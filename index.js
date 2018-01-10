@@ -128,43 +128,45 @@ function showSearchDataWithNoShows() {
   $('.ticket-info').remove();
   
   $('.initial-search-results').on('click', '.artist-name', function(event) {
-    $('.js-initial-data').prop('hidden', false);
+    $('.js-initial-data').addClass('active');
   });
   
   $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-    $('.js-initial-data').prop('hidden', true);
+    $('.js-initial-data').removeClass('active');
   });
 }
 
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
       event.preventDefault();
-      $('.js-initial-data').prop('hidden', false);
+      $('.js-initial-data').addClass('active');
     });
     
     $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-      $('.js-initial-data').prop('hidden', true);
+      $('.js-initial-data').removeClass('active');
     });
 } 
 
 function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, name, venueTitle, address, day, purchaseLink) {
   return `
+  <div class="js-search-results">
     <h2>If you like</h2>
     <iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
-      <a href="#" class="artist-name">${title}</a> 
-        <div class='js-initial-data' hidden>
+      <a href="#" class="artist-name" style="text-decoration: none">${title}</a> 
+        <div class='js-initial-data initial-data'>
           <p class="tease-read">${tease}</p>
-          <a href="${read}" class="read-link" target="_blank">Learn more</a>
+          <a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more</a>
           <h3 class="performance-banner">Upcoming Performance</h3>
             <p class="no-shows-notification">No shows coming up..</p>
               <div class='ticket-info'>
                 <p class="show-date">${day}</p>
                 <p class="show-name">${name}</p>
                 <p class="show-title-address">${venueTitle} ${address}</p>
-                <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets</a>
+                <a href="${purchaseLink}" target="_blank" class="ticket-link" style="text-decoration: none">Buy Tickets</a>
               </div>
             <button class="hide-initial-data-btn">Hide</button>
         </div>
+    </div>
   `;
 }
 
@@ -180,7 +182,7 @@ function generateRelatedSearchResults(data) {
   const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
   return `
     <div class="related-music-container">
-    <a href="#" class="related-artist-name">${name}</a>
+    <a href="#" class="related-artist-name" style="text-decoration: none">${name}</a>
     </div>
   `;
 }
