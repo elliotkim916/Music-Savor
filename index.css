@@ -27,7 +27,7 @@ html {
 }
 
 .active {
-    max-height: 600px;
+    max-height: 800px;
     transition: max-height 1s;
 }
 
@@ -104,4 +104,24 @@ a:hover {
 
 p {
     font-size: 18px;
+}
+
+.hide-initial-data-btn {
+
+}
+
+.tease-read-container {
+    border-radius: 5px;
+    background-color: beige;
+    opacity: 0.6;
+}
+
+.tease-read {
+    
+}
+
+.ticket-info {
+    border-radius: 5px;
+    background-color: beige;
+    opacity: 0.6;
 }
