@@ -34,7 +34,7 @@ function getTastediveData(config, artist){
             q: `${artist}`,
             type: 'music',
             info: 1,
-            limit: 10,
+            limit: 20,
             k: '293729-MusicSav-F68RALT7'
         },
         dataType: 'jsonp',
@@ -129,22 +129,22 @@ function showSearchDataWithNoShows() {
   $('.ticket-link').remove();
   
   $('.initial-search-results').on('click', '.artist-name', function(event) {
-    $('.js-initial-data').prop('hidden', false).addClass('active');
+    $('.js-initial-data').addClass('active');
   });
   
   $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-    $('.js-initial-data').prop('hidden', true).removeClass('active');
+    $('.js-initial-data').removeClass('active');
   });
 }
 
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.artist-name', function(event) {
       event.preventDefault();
-      $('.js-initial-data').addClass('active').prop('hidden', false);
+      $('.js-initial-data').addClass('active');
     });
     
     $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-      $('.js-initial-data').removeClass('active').prop('hidden', true);
+      $('.js-initial-data').removeClass('active');
     });
 } 
 
@@ -152,22 +152,30 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
   return `
   <div class="js-search-results">
     <h2>If you like</h2>
-    <iframe id="ytplayer" type="text/html" width="475" height="260" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
-      <a href="#" class="artist-name" style="text-decoration: none">${title}</a> 
-        <div class='js-initial-data initial-data' hidden>
-        <div class="tease-read-container"><p class="tease-read">${tease}</p></div>
-          <a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more</a>
-          <h3 class="performance-banner">Upcoming Performance</h3>
-            <p class="no-shows-notification">No shows coming up..</p>
-              <div class='ticket-info'>
-                <p class="show-date">${day}</p>
-                <p class="show-name">${name}</p>
-                <p class="show-title-address">${venueTitle} ${address}</p>
+      <iframe id="ytplayer" type="text/html" width="500" height="270" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
+      <div class="artist-name-and-data">
+        <div style="text-align:center"><a href="#" class="artist-name" style="text-decoration: none">${title}</a></div>    
+          <div class='js-initial-data initial-data'>
+            <div class="read-and-link-container">
+              <div class="tease-read-container">
+                <p class="tease-read">${tease}</p>
               </div>
-              <a href="${purchaseLink}" target="_blank" class="ticket-link" style="text-decoration: none">Buy Tickets</a>
-            <button class="hide-initial-data-btn">Hide</button>
-        </div>
-    </div>
+              <div style="text-align:center"><a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more</a></div>
+            </div> 
+              <div class="performance-info"> 
+                <h3 class="performance-banner">Upcoming Performance</h3>
+                  <p class="no-shows-notification">No shows coming up..</p>
+                    <div class='ticket-info'>
+                      <p class="show-date">${day}</p>
+                      <p class="show-name">${name}</p>
+                      <p class="show-title-address">${venueTitle} ${address}</p>
+                    </div>
+                    <div style="text-align:center"><a href="${purchaseLink}" target="_blank" class="ticket-link" style="text-decoration: none">Buy Tickets</a></div>
+                    <button class="hide-initial-data-btn">✖</button>
+              </div>
+          </div>
+      </div>
+  </div>
   `;
 }
 

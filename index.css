@@ -8,6 +8,7 @@ body {
     background-image: url('./img/travis-yewell-273488.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
     font-family: 'Cabin Condensed';
     box-sizing: border-box;
@@ -26,9 +27,31 @@ html {
     transition: max-height 1s;
 }
 
+.hide-initial-data-btn {
+    display: none;
+}
+
+.active .hide-initial-data-btn {
+    display: block;
+}
+
 .active {
-    max-height: 1200px;
+    max-height: 1400px;
     transition: max-height 1s;
+}
+
+.artist-name-and-data {
+    margin-top: 25px;   
+}
+
+.read-and-link-container {
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px; 
+}
+
+.performance-info {
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px; 
 }
 
 header {
@@ -41,6 +64,7 @@ h1 {
 
 h3 {
     font-size: 30px;
+    text-align: center;
 }
 
 .container {
@@ -73,24 +97,22 @@ input[type="text"] {
 .search-results {
     position: relative;
     top: 75px;
-}
-
-h2 {
-    font-size: 30px;
-}
-
-.js-search-results {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
     padding-left: 15px;
     padding-right: 15px;
-     
+    
 }
 
-.check-out {
-    padding-left: 15px;
+.related-search-results {
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px;
+    
 }
 
-.related-music-container {
-    padding-left: 15px;
+.artist-name, h2 {
+    font-size: 55px;
 }
 
 a {
@@ -108,22 +130,28 @@ p {
 
 .hide-initial-data-btn {
     font-family: 'Cabin Condensed';
-    position: absolute;
-    left: 455px;
-}
-
-.tease-read-container {
-    border-radius: 5px;
-    background-color: beige;
-    opacity: 0.6;
-}
-
-.tease-read {
+    
     
 }
 
-.ticket-info {
-    border-radius: 5px;
-    background-color: beige;
-    opacity: 0.6;
+.related-search-results {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 40px;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    display: block;
+    margin: auto;
 }
+
+.related-artist-name {
+    display: inline;
+    text-align: center;
+}
+
+.tease-read-container, .ticket-info {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
