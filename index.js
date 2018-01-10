@@ -43,12 +43,12 @@ function getTastediveData(config, artist){
     };
   return $.ajax(query);
 }
-console.log(data.performers.slug);
+
 function getSeatgeekData(config, artist){
   const url = config.baseUrl + config.endpoint;
   const query = {
     data: {
-      'performers.slug': artist.replace(/\s/g, '-'),
+      'performers.slug': artist.replace(/\s/g, '-').toLowerCase(),
       client_id: config.client_id
     },
     dataType: 'json',
