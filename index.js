@@ -160,13 +160,13 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
   return `
   <div class="js-search-results">
     <h2 class="artist-name">If you like ${title}</h2>
-      <iframe style="position:relative; top:-25px; "id="ytplayer" type="text/html" width="500" height="270" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
+      <iframe style="position:relative; top:-25px;" id="ytplayer" type="text/html" width="500" height="270" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
       <div class="artist-name-and-data">
         <button class="show-initial-data-btn">Show &#8595;</button>    
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
               <div class="tease-read-container">
-                <p class="tease-read">${tease}</p>
+                <p class="tease-read" style="position:relative; top:6px;">${tease}</p>
               </div>
               <div style="text-align:center"><a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more&#10064;</a></div>
             </div> 
