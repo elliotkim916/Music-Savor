@@ -123,12 +123,24 @@ function displayData(tastediveRes, seatgeekRes){
       }
         $('.related-search-results').html(results);
         showRelatedSearchData();
+    
+  let noType = tastediveData.Similar.Info[0].Type;
+  if (noType === 'unknown') {
+    $('.no-search-results').removeClass('hidden').html(generateNoResults);
+    $('.search-results').addClass('hidden');
+  }
 }
 
+function generateNoResults() {
+  return `
+    <h3>Sorry that search does not exist. Please try a different search.</h3>
+    `;
+}
 function showSearchDataWithNoShows() {
   $('.ticket-info').remove();
   $('.ticket-link').remove();
-  
+  $('.no-search-results').addClass('hidden');
+
   $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
     $('.js-initial-data').addClass('active');
     $('.show-initial-data-btn').addClass('hidden');
@@ -141,17 +153,19 @@ function showSearchDataWithNoShows() {
 }
 
 function showInitialSearchData() {
-    $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
-      event.preventDefault();
-      $('.js-initial-data').addClass('active');
-      $('.show-initial-data-btn').addClass('hidden');
-    });
+  $('.no-search-results').addClass('hidden');
+  
+  $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
+    event.preventDefault();
+    $('.js-initial-data').addClass('active');
+    $('.show-initial-data-btn').addClass('hidden');
+  });
     
-    $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-      $('.js-initial-data').removeClass('active');
-      $('.show-initial-data-btn').removeClass('hidden');
-      $('.hide-initial-data-btn').addClass('hidden');
-    });
+  $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
+    $('.js-initial-data').removeClass('active');
+    $('.show-initial-data-btn').removeClass('hidden');
+    $('.hide-initial-data-btn').addClass('hidden');
+  });
 } 
 
 function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, name, venueTitle, address, day, purchaseLink) {
