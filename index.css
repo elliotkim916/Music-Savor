@@ -6,6 +6,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     background-image: url('./img/travis-yewell-273488.jpg');
+    background-blend-mode: difference;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -25,10 +26,34 @@ html {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s;
+    margin-top: -15px;
+}
+
+.show-initial-data-btn {
+    display: none;
+    font-family: 'Cabin Condensed';
+    border-radius: 5px;
+    width: 71px;
+    height: 35px;
+    font-size: 19px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 29px;
 }
 
 .hide-initial-data-btn {
     display: none;
+    font-family: 'Cabin Condensed';
+    border-radius: 5px;
+    width: 71px;
+    height: 35px;
+    font-size: 19px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
 }
 
 .active .hide-initial-data-btn {
@@ -41,25 +66,53 @@ html {
 }
 
 .artist-name-and-data {
-    margin-top: 25px;   
+    margin-top: 20px;   
+}
+
+.artist-name {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    width: 445px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.check-out {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .read-and-link-container {
-    background-color: rgba(255,255,255,0.4);
-    border-radius: 5px; 
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
 }
 
 .performance-info {
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
+     
 }
 
 header {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px; 
+    height: 260px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, h2 {
     text-align: center;
+    color: rgba(0, 0, 0, 0.906);
 }
 
 h1 {
-    font-size: 100px;
+    font-size: 110px;
+    margin-bottom: 10px;
 }
 
 h3 {
@@ -106,13 +159,13 @@ input[type="text"] {
 }
 
 .related-search-results {
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     
 }
 
-.artist-name, h2 {
-    font-size: 55px;
+h2 {
+    font-size: 60px;
 }
 
 a {
@@ -128,21 +181,16 @@ p {
     font-size: 19px;
 }
 
-.hide-initial-data-btn {
-    font-family: 'Cabin Condensed';
-    
-    
-}
-
 .related-search-results {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
-    column-gap: 40px;
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
+    column-gap: 20px;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
     display: block;
     margin: auto;
+    margin-top: -25px;
 }
 
 .related-artist-name {
@@ -150,7 +198,7 @@ p {
     text-align: center;
 }
 
-.tease-read-container, .ticket-info {
+.tease-read-container, .ticket-info, .ticket-link {
     padding-left: 25px;
     padding-right: 25px;
 }
