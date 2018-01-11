@@ -19,6 +19,7 @@ $(function() {
 function watchSubmit() {
   $('.js-search-form').on('submit', function(event) {
     event.preventDefault();
+    $('.search-results').removeClass('hidden');
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();
     initiateRequests(query);
@@ -129,13 +130,11 @@ function showSearchDataWithNoShows() {
   $('.ticket-link').remove();
   
   $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
-    event.stopPropagation();
     $('.js-initial-data').addClass('active');
     $('.show-initial-data-btn').addClass('hidden');
   });
   
   $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-    event.stopPropagation();
     $('.js-initial-data').removeClass('active');
     $('.show-initial-data-btn').removeClass('hidden');
   });
@@ -144,15 +143,14 @@ function showSearchDataWithNoShows() {
 function showInitialSearchData() {
     $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
       event.preventDefault();
-      event.stopPropagation();
       $('.js-initial-data').addClass('active');
       $('.show-initial-data-btn').addClass('hidden');
     });
     
     $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-      event.stopPropagation();
       $('.js-initial-data').removeClass('active');
       $('.show-initial-data-btn').removeClass('hidden');
+      $('.hide-initial-data-btn').addClass('hidden');
     });
 } 
 
@@ -162,7 +160,7 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
     <h2 class="artist-name">If you like ${title}</h2>
       <iframe style="position:relative; top:-25px;" id="ytplayer" type="text/html" width="500" height="270" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
       <div class="artist-name-and-data">
-        <button class="show-initial-data-btn">Show &#8595;</button>    
+           
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
               <div class="tease-read-container">
@@ -170,7 +168,7 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
               </div>
               <div style="text-align:center"><a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more&#10064;</a></div>
             </div> 
-              <div class="performance-info"> 
+            <div class="performance-info"> 
                 <h3 class="performance-banner">Upcoming Performance</h3>
                   <p class="no-shows-notification">No shows coming up..</p>
                     <div class='ticket-info'>
@@ -179,9 +177,10 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
                       <p class="show-title-address">${venueTitle} ${address}</p>
                     </div>
                     <div style="text-align:center"><a href="${purchaseLink}" target="_blank" class="ticket-link" style="text-decoration: none">Buy Tickets&#10064;</a></div>
-                    
-              </div><button class="hide-initial-data-btn">Hide &#8593;</button>
+            </div>
+            <button class="hide-initial-data-btn">See less</button>
           </div>
+          <button class="show-initial-data-btn">See more</button>
       </div>
   </div>
   `;
