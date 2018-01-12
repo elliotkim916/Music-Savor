@@ -1,4 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    max-width: 1000px;
     min-width: 100%;
     min-height: 100%;
     background-image: url('./img/travis-yewell-273488.jpg');
@@ -17,10 +22,15 @@ html {
     min-height: 100%; 
 }
 
+.hide-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 /* artist information slides up & down */
 .initial-data {
     max-height: 97px;
-    text-overflow: ellipsis;
     overflow: hidden;
     transition: max-height 1s;
     margin-top: -15px;
@@ -91,6 +101,7 @@ html {
     border-radius: 5px;
     padding-top: 0.01px;
     padding-bottom: 5px;
+
 }
 
 .performance-info {
@@ -131,6 +142,7 @@ h3 {
 
 /*  size of input */
 .query {
+    display: inline-block;
     width: 350px;
     height: 45px;
     border-radius: 5px;
@@ -142,12 +154,17 @@ input[type="text"] {
 }
 
 .search-button {
+    display: inline-block;
     width: 100px;
-    height: 35px;
+    height: 45px;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
     font-family: 'Cabin Condensed';
     font-size: 20px;
+    border: 1px solid white;
+    position: relative;
+    left: 6px;
+    bottom: 3px;
 }
 
 .search-results {
@@ -159,6 +176,14 @@ input[type="text"] {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 50px;
+}
+
+.initial-iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: 250px;
 }
 
 .related-search-results {
@@ -193,8 +218,13 @@ a {
     color: black;
 }
 
-a:hover { 
+a:hover {
+    text-decoration: none;
     color: white;
+}
+
+a.hover:hover {
+    text-decoration: underline;
 }
 
 p {
@@ -219,4 +249,148 @@ p {
     margin-right: auto;
     position: relative;
     top: 100px;
+}
+
+/* Media queries */
+@media only screen and (min-width: 750px) {
+    header {
+        width: 690px; 
+        height: 330px;
+    }
+   
+    .query {
+        width: 450px;
+        height: 65px;
+        display: inline-block;
+        border: 1px solid white;
+    }
+
+    input[type="text"] {
+        font-size: 45px;
+    }
+
+    .initial-data {
+        overflow: hidden;
+        margin-top: -15px;
+        width: 700px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .active .hide-initial-data-btn {
+        display: block;
+    }
+    
+    .active {
+        max-height: 4400px;
+        transition: max-height 1s;
+    }
+
+    .search-button {
+        width: 175px;
+        height: 65px;
+        font-size: 35px;
+        display: inline-block;
+        margin-left: 9px;
+        position: relative;
+        bottom: 4.63px;
+        border: 1px solid white;
+    }
+
+    .search-results {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 800px;
+    }
+
+    h1 {
+        font-size: 130px;
+        margin-bottom: 30px;
+    }
+    
+    h3 {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .initial-iframe {
+        display: block;
+        width: 650px; 
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .artist-name {
+        width: 95%;    
+    }
+
+    h2 {
+        font-size: 65px;
+    }
+
+    .check-out {
+        width: 300px;
+    }
+
+    .read-and-link-container {
+        width: 680px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .performance-info {
+        display: block;
+        width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    p {
+        font-size: 27px;
+    }
+
+    a {
+        font-size: 40px;
+    }
+
+    .related-search-results {
+        width: 650px;
+        display: block;
+        position: relative;
+        margin: auto;
+    }
+
+    .show-initial-data-btn {
+        width: 121px;
+        height: 55px;
+        font-size: 27px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hide-initial-data-btn {
+        display: none;
+        width: 121px;
+        height: 55px;
+        font-size: 27px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .no-search-results {
+        height: 110px;
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

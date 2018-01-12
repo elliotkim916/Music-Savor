@@ -76,7 +76,6 @@ function displayData(tastediveRes, seatgeekRes){
    */
   const tastediveData = tastediveRes[0];
   const seatgeekData = seatgeekRes[0];
-  
   // console.log(tastediveData.Similar.Results[0].wUrl);
   
   // Tastedive data
@@ -123,7 +122,8 @@ function displayData(tastediveRes, seatgeekRes){
       }
         $('.related-search-results').html(results);
         showRelatedSearchData();
-    
+  
+  // No search results
   let noType = tastediveData.Similar.Info[0].Type;
   if (noType === 'unknown') {
     $('.no-search-results').removeClass('hidden').html(generateNoResults);
@@ -136,6 +136,7 @@ function generateNoResults() {
     <h3>Sorry that search does not exist. Please try a different search.</h3>
     `;
 }
+
 function showSearchDataWithNoShows() {
   $('.ticket-info').remove();
   $('.ticket-link').remove();
@@ -144,27 +145,35 @@ function showSearchDataWithNoShows() {
   $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
     $('.js-initial-data').addClass('active');
     $('.show-initial-data-btn').addClass('hidden');
+    $('.tease-read').removeClass('hide-overflow');
+    $('.read-link').addClass('hidden');
   });
   
   $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
     $('.js-initial-data').removeClass('active');
     $('.show-initial-data-btn').removeClass('hidden');
+    $('.tease-read').addClass('hide-overflow');
+    $('.read-link').removeClass('hidden');
   });
 }
 
 function showInitialSearchData() {
   $('.no-search-results').addClass('hidden');
-  
+
   $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
     event.preventDefault();
     $('.js-initial-data').addClass('active');
     $('.show-initial-data-btn').addClass('hidden');
+    $('.tease-read').removeClass('hide-overflow');
+    $('.read-link').removeClass('hidden');
   });
     
   $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
     $('.js-initial-data').removeClass('active');
     $('.show-initial-data-btn').removeClass('hidden');
     $('.hide-initial-data-btn').addClass('hidden');
+    $('.tease-read').addClass('hide-overflow');
+    $('.read-link').addClass('hidden');
   });
 } 
 
@@ -172,15 +181,14 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
   return `
   <div class="js-search-results">
     <h2 class="artist-name">If you like ${title}</h2>
-      <iframe style="position:relative; top:-25px;" id="ytplayer" type="text/html" width="500" height="270" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
+      <iframe style="position:relative; top:-25px;" id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
       <div class="artist-name-and-data">
-           
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
               <div class="tease-read-container">
-                <p class="tease-read" style="position:relative; top:6px;">${tease}</p>
+                <p class="tease-read hide-overflow" style="position:relative; top:6px;">${tease}</p>
               </div>
-              <div style="text-align:center"><a href="${read}" class="read-link" target="_blank" style="text-decoration: none">Learn more&#10064;</a></div>
+              <div style="text-align:center"><a href="${read}" class="read-link hidden" target="_blank" style="text-decoration: none">Learn more&#10064;</a></div>
             </div> 
             <div class="performance-info"> 
                 <h3 class="performance-banner">Upcoming Performance</h3>
@@ -212,7 +220,7 @@ function generateRelatedSearchResults(data) {
   const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
   return `
     <div class="related-music-container">
-    <a href="#" class="related-artist-name" style="text-decoration: none">${name}</a>
+      <a href="#" class="related-artist-name" style="text-decoration: none">${name}</a>
     </div>
   `;
 }
