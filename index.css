@@ -36,6 +36,15 @@ html {
     margin-top: -15px;
 }
 
+.active .hide-initial-data-btn {
+    display: block;
+}
+
+.active {
+    max-height: 1400px;
+    transition: max-height 1s;
+}
+
 .show-initial-data-btn {
     font-family: 'Cabin Condensed';
     border-radius: 5px;
@@ -65,15 +74,6 @@ html {
 .show-initial-data-btn:hover, .hide-initial-data-btn:hover {
     cursor: pointer;
     background-color: palegoldenrod;
-}
-
-.active .hide-initial-data-btn {
-    display: block;
-}
-
-.active {
-    max-height: 1400px;
-    transition: max-height 1s;
 }
 
 .artist-name-and-data {
@@ -109,7 +109,7 @@ html {
     padding-bottom: 5px;
 }
 
-header {
+main {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
     height: 260px;
@@ -118,7 +118,7 @@ header {
     margin-right: auto;
 }
 
-header, h2 {
+main, h2 {
     text-align: center;
     color: rgba(0, 0, 0, 0.906);
 }
@@ -264,7 +264,7 @@ p {
 
 /* Media queries */
 @media only screen and (min-width: 750px) {
-    header {
+    main {
         width: 690px; 
         height: 330px;
     }

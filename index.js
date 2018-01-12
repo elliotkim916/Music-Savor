@@ -165,7 +165,7 @@ function showInitialSearchData() {
     $('.show-initial-data-btn').removeClass('hidden');
     $('.hide-initial-data-btn').addClass('hidden');
     $('.tease-read').addClass('hide-overflow');
-    $('.read-link').addClass('hidden');
+    // $('.read-link').addClass('hidden');
     $('.performance-info').prop('hidden', true);
   });
 } 
@@ -175,7 +175,7 @@ function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, 
   return `
   <div class="js-search-results">
     <h2 class="artist-name">If you like<br> ${musicianName}</h2>
-      <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${youtubeID}" frameborder="0" class="initial-iframe"></iframe>
+      <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${youtubeID}" frameborder="0" class="initial-iframe" title="Youtube Video"></iframe>
       <div class="artist-name-and-data">
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
