@@ -69,17 +69,19 @@ function displayData(tastediveRes, seatgeekRes) {
   
   // Tastedive data
   let initialSearch = tastediveData.Similar.Info[0];
-  let name = initialSearch.Name;
-  let type = initialSearch.Type;
-  let teaser = initialSearch.wTeaser;
-  let readMore = initialSearch.wUrl;
-  let youtubeURL = initialSearch.yUrl;
-  let youtubeID = initialSearch.yID;
+  const tdData = {
+    musicianName: initialSearch.Name,
+    type: initialSearch.Type,
+    teaser: initialSearch.wTeaser,
+    readMore: initialSearch.wUrl,
+    youtubeUrl: initialSearch.yUrl,
+    youtubeID: initialSearch.yID
+  };
   
   // Seatgeek data
   let numberOfShows = seatgeekData.meta.total;
   if (numberOfShows === 0) {
-    $('.initial-search-results').html(generateInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID));
+    $('.initial-search-results').html(generateInitalSearchResults(tdData));
     showSearchDataWithNoShows();
       } else {
         let concertSearch = seatgeekData.events[0];
@@ -88,7 +90,7 @@ function displayData(tastediveRes, seatgeekRes) {
         let location = concertSearch.venue.display_location;
         let date = moment(concertSearch.datetime_local).format('MMMM Do YYYY, h:mm a');
         let buyTicketsLink = concertSearch.url;
-    $('.initial-search-results').html(generateInitalSearchResults(name, type, teaser, readMore, youtubeURL, youtubeID, title, venueName, location, date, buyTicketsLink));
+    $('.initial-search-results').html(generateInitalSearchResults(tdData, title, venueName, location, date, buyTicketsLink));
     $('.no-shows-notification').remove();
     showInitialSearchData();
   }
@@ -168,19 +170,20 @@ function showInitialSearchData() {
   });
 } 
 
-function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, name, venueTitle, address, day, purchaseLink) {
+function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, purchaseLink) {
+  const {musicianName, type, teaser, readMore, youtubeUrl, youtubeID} = tDiveData;
   return `
   <div class="js-search-results">
-    <h2 class="artist-name">If you like<br> ${title}</h2>
-      <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
+    <h2 class="artist-name">If you like<br> ${musicianName}</h2>
+      <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${youtubeID}" frameborder="0" class="initial-iframe"></iframe>
       <div class="artist-name-and-data">
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
               <div class="tease-read-container">
-                <p class="tease-read hide-overflow">${tease}</p>
+                <p class="tease-read hide-overflow">${teaser}</p>
               </div>
               <div class="center-link">
-                <a href="${read}" class="read-link hidden" target="_blank">Learn more&#10064;</a>
+                <a href="${readMore}" class="read-link hidden" target="_blank">Learn more&#10064;</a>
               </div>
             </div> 
             <div class="performance-info" hidden> 
