@@ -133,7 +133,7 @@ function displayData(tastediveRes, seatgeekRes){
 
 function generateNoResults() {
   return `
-    <h3>Sorry that search does not exist. Please try a different search.</h3>
+    <h3>Sorry that search does not exist.<br> Please try a different search.</h3>
     `;
 }
 
