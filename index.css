@@ -101,7 +101,6 @@ html {
     border-radius: 5px;
     padding-top: 0.01px;
     padding-bottom: 5px;
-
 }
 
 .performance-info {
@@ -194,9 +193,6 @@ input[type="text"] {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
-    column-gap: 10px;
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
     display: block;
     width: 425px;
     margin: auto;
