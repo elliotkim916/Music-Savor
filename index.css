@@ -198,7 +198,7 @@ input[type="text"] {
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     display: block;
-    width: 400px;
+    width: 425px;
     margin: auto;
     margin-top: -25px;
     box-sizing: border-box;
@@ -209,7 +209,7 @@ input[type="text"] {
 .related-music-container {
     /* text-align: center; */
     box-sizing: border-box;
-    width: 166px;
+    width: 178px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -339,7 +339,7 @@ p {
     }
 
     .artist-name {
-        width: 95%;    
+        width: 68%;    
     }
 
     h2 {
@@ -380,11 +380,11 @@ p {
     }
 
     .related-music-container {
-        width: 270px;
+        width: 285px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .show-initial-data-btn {
         width: 121px;
         height: 55px;

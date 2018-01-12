@@ -174,7 +174,7 @@ function showInitialSearchData() {
 function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, name, venueTitle, address, day, purchaseLink) {
   return `
   <div class="js-search-results">
-    <h2 class="artist-name">If you like ${title}</h2>
+    <h2 class="artist-name">If you like<br> ${title}</h2>
       <iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/${ytID}" frameborder="0" class="initial-iframe"></iframe>
       <div class="artist-name-and-data">
           <div class='js-initial-data initial-data'>
