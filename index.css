@@ -59,7 +59,7 @@ html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 18px;
+    margin-top: 32px;
 }
 
 .show-initial-data-btn:hover, .hide-initial-data-btn:hover {
@@ -179,6 +179,8 @@ input[type="text"] {
 }
 
 .initial-iframe {
+    position:relative; 
+    top:-25px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -196,7 +198,7 @@ input[type="text"] {
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     display: block;
-    width: 350px;
+    width: 400px;
     margin: auto;
     margin-top: -25px;
     box-sizing: border-box;
@@ -205,30 +207,43 @@ input[type="text"] {
 }
 
 .related-music-container {
-    text-align: center;
+    /* text-align: center; */
     box-sizing: border-box;
+    width: 166px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2 {
     font-size: 60px;
 }
 
+.center-link {
+    text-align: center;
+}
+
 a {
     font-size: 25px;
     color: black;
-}
-
-a:hover {
     text-decoration: none;
-    color: white;
 }
 
-a.hover:hover {
+.related-artist-name:hover {
+    color: white;
     text-decoration: underline;
+}
+
+.read-link:hover, .ticket-link:hover {
+    color: white;
 }
 
 p {
     font-size: 19px;
+}
+
+.tease-read {
+    position:relative; 
+    top:6px;
 }
 
 .tease-read-container, .ticket-info, .ticket-link, .no-shows-notification {
@@ -324,7 +339,7 @@ p {
     }
 
     .artist-name {
-        width: 89%;    
+        width: 95%;    
     }
 
     h2 {
@@ -364,6 +379,12 @@ p {
         margin: auto;
     }
 
+    .related-music-container {
+        width: 270px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
     .show-initial-data-btn {
         width: 121px;
         height: 55px;
