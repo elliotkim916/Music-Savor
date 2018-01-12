@@ -202,8 +202,6 @@ input[type="text"] {
     margin: auto;
     margin-top: -25px;
     box-sizing: border-box;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 .related-music-container {
@@ -212,13 +210,15 @@ input[type="text"] {
     width: 178px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 h2 {
     font-size: 60px;
 }
 
-.center-link {
+.center-link, .center-check-out {
     text-align: center;
 }
 

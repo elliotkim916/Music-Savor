@@ -12,9 +12,7 @@ const SEATGEEK_CONFIG = {
   client_id: 'MTAxOTEwMDl8MTUxNTAxMzk2My43OQ'
 };
 
-$(function() {
-  watchSubmit();
-});
+$(watchSubmit);
 
 function watchSubmit() {
   $('.js-search-form').on('submit', function(event) {
@@ -24,7 +22,6 @@ function watchSubmit() {
     const query = queryTarget.val();
     initiateRequests(query);
     queryTarget.val('');
-    $('.check-out').prop('hidden', false);
   });
 }
 
@@ -62,7 +59,7 @@ function getSeatgeekData(config, artist){
 function initiateRequests(searchTerm) {
   $.when(
   getTastediveData(TASTEDIVE_CONFIG, searchTerm), getSeatgeekData(SEATGEEK_CONFIG, searchTerm)
-).done(displayData);
+  ).done(displayData);
 }
 
 function displayData(tastediveRes, seatgeekRes) {
@@ -182,22 +179,29 @@ function generateInitalSearchResults(title, style, tease, read, ytURL, ytID, nam
               <div class="tease-read-container">
                 <p class="tease-read hide-overflow">${tease}</p>
               </div>
-              <div class="center-link"><a href="${read}" class="read-link hidden" target="_blank">Learn more&#10064;</a></div>
+              <div class="center-link">
+                <a href="${read}" class="read-link hidden" target="_blank">Learn more&#10064;</a>
+              </div>
             </div> 
             <div class="performance-info" hidden> 
-                <h3 class="performance-banner">Upcoming Performance</h3>
-                  <p class="no-shows-notification">No shows coming up..</p>
-                    <div class='ticket-info'>
-                      <p class="show-date">${day}</p>
-                      <p class="show-name">${name}</p>
-                      <p class="show-title-address">${venueTitle} ${address}</p>
-                    </div>
-                    <div class="center-link"><a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets&#10064;</a></div>
+              <h3 class="performance-banner">Upcoming Performance</h3>
+                <p class="no-shows-notification">No shows coming up..</p>
+                  <div class='ticket-info'>
+                    <p class="show-date">${day}</p>
+                    <p class="show-name">${name}</p>
+                    <p class="show-title-address">${venueTitle} ${address}</p>
+                  </div>
+                  <div class="center-link">
+                    <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets&#10064;</a>
+                  </div>
             </div>
             <button class="hide-initial-data-btn">See less</button>
           </div>
           <button class="show-initial-data-btn">See more</button>
       </div>
+  </div>
+  <div class="center-check-out">
+    <h2 class="check-out">Check out</h2>
   </div>
   `;
 }
