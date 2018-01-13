@@ -76,7 +76,7 @@ html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 45px;
+    margin-top: 55px;
 }
 
 .show-initial-data-btn:hover, .hide-initial-data-btn:hover {
@@ -207,11 +207,14 @@ input[type="text"] {
     margin: auto;
     margin-top: -25px;
     box-sizing: border-box;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .related-music-container {
     box-sizing: border-box;
-    width: 178px;
+    width: 189pxpx;
     margin-left: auto;
     margin-right: auto;
     padding-top: 2px;
@@ -377,10 +380,11 @@ p {
         display: block;
         position: relative;
         margin: auto;
+        padding-left: 30px;
     }
 
     .related-music-container {
-        width: 285px;
+        width: 302px;
         margin-left: auto;
         margin-right: auto;
     }

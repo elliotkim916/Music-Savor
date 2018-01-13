@@ -1,4 +1,3 @@
-/*global $ */
 'use strict';
 
 const TASTEDIVE_CONFIG = {
@@ -65,7 +64,6 @@ function initiateRequests(searchTerm) {
 function displayData(tastediveRes, seatgeekRes) {
   const tastediveData = tastediveRes[0];
   const seatgeekData = seatgeekRes[0];
-  // console.log(tastediveData.Similar.Results[0].wUrl);
   
   // Tastedive data
   let initialSearch = tastediveData.Similar.Info[0];
@@ -82,7 +80,9 @@ function displayData(tastediveRes, seatgeekRes) {
   let numberOfShows = seatgeekData.meta.total;
   if (numberOfShows === 0) {
     $('.initial-search-results').html(generateInitalSearchResults(tdData));
-    showSearchDataWithNoShows();
+    $('.ticket-info').remove();
+    $('.ticket-link').remove();
+    showInitialSearchData();
       } else {
         let concertSearch = seatgeekData.events[0];
         let title = concertSearch.title;
@@ -128,26 +128,6 @@ function generateNoResults() {
     `;
 }
 
-function showSearchDataWithNoShows() {
-  $('.ticket-info').remove();
-  $('.ticket-link').remove();
-  $('.no-search-results').addClass('hidden');
-
-  $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
-    $('.js-initial-data').addClass('active');
-    $('.show-initial-data-btn').addClass('hidden');
-    $('.tease-read').removeClass('hide-overflow');
-    $('.read-link').addClass('hidden');
-  });
-  
-  $('.initial-search-results').on('click','.hide-initial-data-btn', function(event) {
-    $('.js-initial-data').removeClass('active');
-    $('.show-initial-data-btn').removeClass('hidden');
-    $('.tease-read').addClass('hide-overflow');
-    $('.read-link').removeClass('hidden');
-  });
-}
-
 function showInitialSearchData() {
   $('.no-search-results').addClass('hidden');
 
@@ -167,9 +147,7 @@ function showInitialSearchData() {
     setTimeout(function(){
       $('.tease-read').addClass('hide-overflow');
       $('.performance-info').prop('hidden', true);
-    }, 800); 
-    // $('.read-link').addClass('hidden');
-    
+    }, 800);  
   });
 } 
 
@@ -216,7 +194,6 @@ function showRelatedSearchData() {
     $('.initial-iframe').remove();
   });
 }
-
 
 function generateRelatedSearchResults(data) {
   const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
