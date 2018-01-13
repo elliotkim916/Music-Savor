@@ -164,9 +164,12 @@ function showInitialSearchData() {
     $('.js-initial-data').removeClass('active');
     $('.show-initial-data-btn').removeClass('hidden');
     $('.hide-initial-data-btn').addClass('hidden');
-    $('.tease-read').addClass('hide-overflow');
+    setTimeout(function(){
+      $('.tease-read').addClass('hide-overflow');
+      $('.performance-info').prop('hidden', true);
+    }, 800); 
     // $('.read-link').addClass('hidden');
-    $('.performance-info').prop('hidden', true);
+    
   });
 } 
 
@@ -179,12 +182,10 @@ function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, 
       <div class="artist-name-and-data">
           <div class='js-initial-data initial-data'>
             <div class="read-and-link-container">
-              <div class="tease-read-container">
                 <p class="tease-read hide-overflow">${teaser}</p>
-              </div>
-              <div class="center-link">
-                <a href="${readMore}" class="read-link hidden" target="_blank">Learn more&#10064;</a>
-              </div>
+                <div class="center-link">
+                  <a href="${readMore}" class="read-link hidden" target="_blank">Learn more</a>
+                </div>
             </div> 
             <div class="performance-info" hidden> 
               <h3 class="performance-banner">Upcoming Performance</h3>
@@ -195,7 +196,7 @@ function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, 
                     <p class="show-title-address">${venueTitle} ${address}</p>
                   </div>
                   <div class="center-link">
-                    <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets&#10064;</a>
+                    <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets</a>
                   </div>
             </div>
             <button class="hide-initial-data-btn">See less</button>

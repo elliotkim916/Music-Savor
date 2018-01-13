@@ -16,7 +16,11 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
 }
-
+a[href^='http']::after {
+    content: "\202f\2197";
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+}
 html {
     min-width: 100%;
     min-height: 100%; 
@@ -26,6 +30,10 @@ html {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.hide-overflow + .center-link {
+    display: none;
 }
 
 /* artist information slides up & down */
@@ -68,7 +76,7 @@ html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 32px;
+    margin-top: 45px;
 }
 
 .show-initial-data-btn:hover, .hide-initial-data-btn:hover {
@@ -99,14 +107,15 @@ html {
 .read-and-link-container {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
-    padding-top: 0.01px;
-    padding-bottom: 5px;
+    padding: 2px 25px;
 }
 
 .performance-info {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
     padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 main {
@@ -201,7 +210,6 @@ input[type="text"] {
 }
 
 .related-music-container {
-    /* text-align: center; */
     box-sizing: border-box;
     width: 178px;
     margin-left: auto;
@@ -240,11 +248,7 @@ p {
 .tease-read {
     position:relative; 
     top:6px;
-}
-
-.tease-read-container, .ticket-info, .ticket-link, .no-shows-notification {
-    padding-left: 25px;
-    padding-right: 25px;
+    margin-top: 0;
 }
 
 .hidden {
