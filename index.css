@@ -42,7 +42,7 @@ html {
 
 .active {
     max-height: 1400px;
-    transition: max-height 1s;
+    /* transition: max-height 1s; */
 }
 
 .show-initial-data-btn {
