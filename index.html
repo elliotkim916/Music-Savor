@@ -8,12 +8,12 @@
     </head>
 
     <body>
-        <main>
-            <h1>Music Savor</h1>
-            <h3>Search for your favorite artists and discover new artists that sound like them</h3>
+        <main role="main">
+            <h1 role="heading">Music Savor</h1>
+            <h3 role="heading">Search for your favorite artists and discover new artists that sound like them</h3>
         </main>
 
-        <section class="container">
+        <section class="container" role="region">
             <form class="js-search-form">
                 <label for="query"></label>
                 <input type="text" class="js-query query" title="music search" name="music-search" id="query">
@@ -21,12 +21,12 @@
             </form>
         </section>
 
-        <section class="no-search-results hidden"></section>
-
-        <section class="search-results hidden">
+        <section class="search-results hidden" role="region">
             <div class="initial-search-results"></div>
             <div class="related-search-results"></div>
         </section>
+
+        <section class="no-search-results hidden" role="region"></section>
 
         <script src="https://code.jquery.com/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>

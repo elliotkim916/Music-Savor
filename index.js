@@ -76,6 +76,25 @@ function displayData(tastediveRes, seatgeekRes) {
     youtubeID: initialSearch.yID
   };
   
+  // Tastedive related data
+  let relatedSearch = tastediveData.Similar.Results;
+  let results = '';
+  let current;
+  for (let i = 0; i < relatedSearch.length; i++) {
+    current = relatedSearch[i];
+    const relatedData = {
+      name: current.Name,
+      type: current.Type,
+      teaser: current.wTeaser,
+      readMore: current.wUrl,
+      youtubeUrl: current.yUrl,
+      youtubeID: current.yID
+    };
+      results += generateRelatedSearchResults(relatedData);
+  }
+  $('.related-search-results').html(results);
+  showRelatedSearchData();
+
   // Seatgeek data
   let numberOfShows = seatgeekData.meta.total;
   if (numberOfShows === 0) {
@@ -94,26 +113,7 @@ function displayData(tastediveRes, seatgeekRes) {
     $('.no-shows-notification').remove();
     showInitialSearchData();
   }
-  
-  // Tastedive related data
-  let relatedSearch = tastediveData.Similar.Results;
-  let results = '';
-  let current;
-  for (let i = 0; i < relatedSearch.length; i++) {
-    current = relatedSearch[i];
-    const relatedData = {
-      name: current.Name,
-      type: current.Type,
-      teaser: current.wTeaser,
-      readMore: current.wUrl,
-      youtubeUrl: current.yUrl,
-      youtubeID: current.yID
-      };
-        results += generateRelatedSearchResults(relatedData);
-      }
-        $('.related-search-results').html(results);
-        showRelatedSearchData();
-  
+    
   // No search results
   let noType = tastediveData.Similar.Info[0].Type;
   if (noType === 'unknown') {
@@ -172,9 +172,9 @@ function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, 
                     <p class="show-date">${day}</p>
                     <p class="show-name">${name}</p>
                     <p class="show-title-address">${venueTitle} ${address}</p>
-                  </div>
-                  <div class="center-link">
-                    <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets</a>
+                    <div class="center-link">
+                      <a href="${purchaseLink}" target="_blank" class="ticket-link">Buy Tickets</a>
+                    </div>
                   </div>
             </div>
             <button class="hide-initial-data-btn">See less</button>
