@@ -6,7 +6,7 @@ An app that allows users to search for their favorite artists and discover new a
 they love.  Users are able to learn more about their favorite artists, and can purchase tickets to their next
 upcoming performance.
 
-**Screenshots**
+## **Screenshots**
 
 Landing Page:
 <img width="1680" alt="screen shot 2018-01-15 at 12 43 15 pm" src="https://user-images.githubusercontent.com/26806013/34962464-9668717c-f9f8-11e7-85ba-0a5fbe3ca917.png">
@@ -17,7 +17,10 @@ Search Results:
 Search Results (after scrolling down):
 <img width="1591" alt="screen shot 2018-01-15 at 1 37 21 pm" src="https://user-images.githubusercontent.com/26806013/34962662-8b2c9b84-f9f9-11e7-95e3-43d13706dff4.png">
 
-**Technologies used**
+Search Results (after clicking See more)
+<img width="1665" alt="screen shot 2018-01-15 at 1 44 44 pm" src="https://user-images.githubusercontent.com/26806013/34962882-7e806ba8-f9fa-11e7-8a0a-33aa65f25195.png">
+
+### **Technologies used**
 * HTML
 * CSS
 * JavaScript
