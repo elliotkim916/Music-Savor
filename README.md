@@ -5,7 +5,7 @@ they love.  Users are able to learn more about their favorite artists, and can p
 upcoming performance.
 
 **Screenshots**
-![](img/Screen Shot 2018-01-15 at 12.43.15 PM.png)
+![](Music-Savor/img/Screen Shot 2018-01-15 at 12.43.15 PM.png)
 
 
 **Technologies used**
