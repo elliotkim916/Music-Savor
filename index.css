@@ -13,17 +13,18 @@ body {
     background-attachment: fixed;
     background-position: center;
     font-family: 'Cabin Condensed';
-    box-sizing: border-box;
     margin: 0 auto;
 }
+
+html {
+    min-width: 100%;
+    min-height: 100%; 
+}
+
 a[href^='http']::after {
     content: "\202f\2197";
     border-bottom: 1px solid #fff;
     display: inline-block;
-}
-html {
-    min-width: 100%;
-    min-height: 100%; 
 }
 
 .hide-overflow {
@@ -50,7 +51,6 @@ html {
 
 .active {
     max-height: 1400px;
-    /* transition: max-height 1s; */
 }
 
 .show-initial-data-btn {
@@ -67,7 +67,6 @@ html {
 }
 
 .hide-initial-data-btn {
-    display: none;
     font-family: 'Cabin Condensed';
     border-radius: 5px;
     width: 91px;
@@ -137,6 +136,10 @@ h1 {
     margin-bottom: 10px;
 }
 
+h2 {
+    font-size: 60px;
+}
+
 h3 {
     font-size: 30px;
     text-align: center;
@@ -187,8 +190,8 @@ input[type="text"] {
 }
 
 .initial-iframe {
-    position:relative; 
-    top:-25px;
+    position: relative; 
+    top: -25px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -211,16 +214,11 @@ input[type="text"] {
 }
 
 .related-music-container {
-    box-sizing: border-box;
     width: 189px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 2px;
     padding-bottom: 2px;
-}
-
-h2 {
-    font-size: 60px;
 }
 
 .center-link, .center-check-out {
@@ -294,10 +292,6 @@ p {
         margin-right: auto;
     }
 
-    .active .hide-initial-data-btn {
-        display: block;
-    }
-    
     .active {
         max-height: 4400px;
         transition: max-height 1s;
@@ -326,6 +320,10 @@ p {
         margin-bottom: 30px;
     }
     
+    h2 {
+        font-size: 65px;
+    }
+    
     h3 {
         font-size: 45px;
         text-align: center;
@@ -341,10 +339,6 @@ p {
 
     .artist-name {
         width: 68%;    
-    }
-
-    h2 {
-        font-size: 65px;
     }
 
     .check-out {
