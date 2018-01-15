@@ -4,6 +4,8 @@ An app that allows users to search for their favorite artists and discover new a
 they love.  Users are able to learn more about their favorite artists, and can purchase tickets to their next
 upcoming performance.
 
+Screenshots
+
 Technologies used - 
 * HTML
 * CSS
