@@ -20,7 +20,7 @@ Search Results (after scrolling down):
 Search Results (after clicking See more)
 <img width="1665" alt="screen shot 2018-01-15 at 1 44 44 pm" src="https://user-images.githubusercontent.com/26806013/34962882-7e806ba8-f9fa-11e7-8a0a-33aa65f25195.png">
 
-### **Technologies used**
+## **Technologies used**
 * HTML
 * CSS
 * JavaScript
