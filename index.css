@@ -575,7 +575,7 @@ p {
         border: 1px solid white;
         position: relative;
         left: 6px;
-        bottom: 3px;
+        bottom: 2.4px;
     }
     
     .search-results {
@@ -704,7 +704,7 @@ p {
         display: inline-block;
         margin-left: 9px;
         position: relative;
-        bottom: 4.63px;
+        bottom: 5px;
         border: 1px solid white;
     }
 
