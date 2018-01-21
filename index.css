@@ -365,6 +365,7 @@ p {
         width: 272px;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 7px;
     }
 
     p {
@@ -757,6 +758,7 @@ p {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 10px;
     }
 
     .performance-info {
@@ -764,6 +766,7 @@ p {
         width: 680px;
         margin-left: auto;
         margin-right: auto;
+        padding-bottom: 10px;
     }
 
     p {
