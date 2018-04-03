@@ -481,11 +481,6 @@ p {
         margin-top: 55px;
     }
     
-    .show-initial-data-btn:hover, .hide-initial-data-btn:hover {
-        cursor: pointer;
-        background-color: palegoldenrod;
-    }
-    
     .artist-name-and-data {
         margin-top: 20px;   
     }
@@ -637,15 +632,6 @@ p {
         font-size: 25px;
         color: black;
         text-decoration: none;
-    }
-    
-    .related-artist-name:hover {
-        color: white;
-        text-decoration: underline;
-    }
-    
-    .read-link:hover, .ticket-link:hover {
-        color: white;
     }
     
     p {
