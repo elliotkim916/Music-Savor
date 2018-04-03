@@ -1,7 +1,5 @@
 # **Music Savor App**
 
-Created by Elliot Kim
-
 An app that allows users to search for their favorite artists and discover new music that sound similar to the artists
 they love.  Users are able to learn more about their favorite artists and can purchase tickets to their next
 upcoming performance.
@@ -25,3 +23,9 @@ Search Results (after clicking See more):
 * CSS
 * JavaScript
 * jQuery
+
+## **Demo**
+[Live Demo](https://elliotkim916.github.io/Music-Savor/)
+
+## Author
+* Elliot Kim - Front-End Development/Styling
