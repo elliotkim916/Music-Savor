@@ -238,6 +238,7 @@ a {
 .related-artist-name:hover {
     color: white;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .read-link:hover, .ticket-link:hover {
@@ -375,7 +376,6 @@ p {
     a {
         font-size: 20px;
         position: relative;
-        left: -9px;
     }
 
     .related-search-results {
@@ -392,7 +392,7 @@ p {
         padding-top: 5px;
         padding-bottom: 5px;
         position: relative;
-        left: 1px;
+        left: -9px;
     }
 
     .show-initial-data-btn {
