@@ -27,17 +27,17 @@ function watchSubmit() {
 function getTastediveData(config, artist){
   const url = config.baseUrl + config.endpoint;
   const query = {
-        data: {
-            q: `${artist}`,
-            type: 'music',
-            info: 1,
-            limit: 20,
-            k: '293729-MusicSav-F68RALT7'
-        },
-        dataType: 'jsonp',
-        method: 'get', 
-        url
-    };
+    data: {
+      q: `${artist}`,
+      type: 'music',
+      info: 1,
+      limit: 20,
+      k: '293729-MusicSav-F68RALT7'
+    },
+    dataType: 'jsonp',
+    method: 'get', 
+    url
+  };
   return $.ajax(query);
 }
 
@@ -57,7 +57,7 @@ function getSeatgeekData(config, artist){
 
 function initiateRequests(searchTerm) {
   $.when(
-  getTastediveData(TASTEDIVE_CONFIG, searchTerm), getSeatgeekData(SEATGEEK_CONFIG, searchTerm)
+    getTastediveData(TASTEDIVE_CONFIG, searchTerm), getSeatgeekData(SEATGEEK_CONFIG, searchTerm)
   ).done(displayData);
 }
 
@@ -90,7 +90,7 @@ function displayData(tastediveRes, seatgeekRes) {
       youtubeUrl: current.yUrl,
       youtubeID: current.yID
     };
-      results += generateRelatedSearchResults(relatedData);
+    results += generateRelatedSearchResults(relatedData);
   }
   $('.related-search-results').html(results);
   showRelatedSearchData();
@@ -102,13 +102,13 @@ function displayData(tastediveRes, seatgeekRes) {
     $('.ticket-info').remove();
     $('.ticket-link').remove();
     showInitialSearchData();
-      } else {
-        let concertSearch = seatgeekData.events[0];
-        let title = concertSearch.title;
-        let venueName = concertSearch.venue.name;
-        let location = concertSearch.venue.display_location;
-        let date = moment(concertSearch.datetime_local).format('MMMM Do YYYY, h:mm a');
-        let buyTicketsLink = concertSearch.url;
+  } else {
+    let concertSearch = seatgeekData.events[0];
+    let title = concertSearch.title;
+    let venueName = concertSearch.venue.name;
+    let location = concertSearch.venue.display_location;
+    let date = moment(concertSearch.datetime_local).format('MMMM Do YYYY, h:mm a');
+    let buyTicketsLink = concertSearch.url;
     $('.initial-search-results').html(generateInitalSearchResults(tdData, title, venueName, location, date, buyTicketsLink));
     $('.no-shows-notification').remove();
     showInitialSearchData();
@@ -129,7 +129,7 @@ function generateNoResults() {
 }
 
 function generateInitalSearchResults(tDiveData, name, venueTitle, address, day, purchaseLink) {
-  const {musicianName, type, teaser, readMore, youtubeUrl, youtubeID} = tDiveData;
+  const {musicianName, teaser, readMore, youtubeID} = tDiveData;
   return `
   <div class="js-search-results">
     <h2 class="artist-name">If you like<br> ${musicianName}</h2>
@@ -178,6 +178,7 @@ function showInitialSearchData() {
   });
     
   $('.initial-search-results').on('click', '.hide-initial-data-btn', function(event) {
+    event.preventDefault();
     $('.js-initial-data').removeClass('active');
     $('.show-initial-data-btn').removeClass('hidden');
     $('.hide-initial-data-btn').addClass('hidden');
@@ -189,10 +190,10 @@ function showInitialSearchData() {
 } 
 
 function generateRelatedSearchResults(data) {
-  const {name, type, teaser, readMore, youtubeUrl, youtubeID} = data;
+  const {name} = data;
   return `
     <div class="related-music-container">
-      <a href="#" class="related-artist-name hover">${name}</a>
+      <a href="#" class="related-artist-name">${name}</a>
     </div>
   `;
 }
