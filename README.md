@@ -4,6 +4,18 @@ An app that allows users to search for their favorite artists and discover new m
 they love.  Users are able to learn more about their favorite artists and can purchase tickets to their next
 upcoming performance.
 
+## **Technologies used**
+* HTML
+* CSS
+* JavaScript
+* jQuery
+
+## **Demo**
+[Live Demo](https://elliotkim916.github.io/Music-Savor/)
+
+## Author
+* Elliot Kim - Front-End Development/Styling
+
 ## **Screenshots**
 
 Landing Page:
@@ -17,15 +29,3 @@ Search Results (after scrolling down):
 
 Search Results (after clicking See more):
 <img width="1665" alt="screen shot 2018-01-15 at 1 44 44 pm" src="https://user-images.githubusercontent.com/26806013/34962882-7e806ba8-f9fa-11e7-8a0a-33aa65f25195.png">
-
-## **Technologies used**
-* HTML
-* CSS
-* JavaScript
-* jQuery
-
-## **Demo**
-[Live Demo](https://elliotkim916.github.io/Music-Savor/)
-
-## Author
-* Elliot Kim - Front-End Development/Styling
