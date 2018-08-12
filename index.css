@@ -1,59 +1,468 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    max-width: 1000px;
-    min-width: 100%;
-    min-height: 100%;
-    background-image: url('./img/travis-yewell-273488.jpg');
-    background-blend-mode: difference;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    font-family: 'Cabin Condensed';
-    margin: 0 auto;
+  max-width: 1000px;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url('./img/travis-yewell-273488.jpg');
+  background-blend-mode: difference;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Cabin Condensed';
+  margin: 0 auto;
 }
 
 html {
-    min-width: 100%;
-    min-height: 100%; 
+  min-width: 100%;
+  min-height: 100%; 
 }
 
 a[href^='http']::after {
-    content: "\202f\2197";
-    border-bottom: 1px solid #fff;
-    display: inline-block;
+  content: "\202f\2197";
+  border-bottom: 1px solid #fff;
+  display: inline-block;
 }
 
 .hide-overflow {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .hide-overflow + .center-link {
-    display: none;
+  display: none;
 }
 
 /* artist information slides up & down */
 .initial-data {
+  max-height: 97px;
+  overflow: hidden;
+  transition: max-height 1s;
+  margin-top: -15px;
+}
+
+.active .hide-initial-data-btn {
+  display: block;
+}
+
+.active {
+  max-height: 1400px;
+}
+
+.show-initial-data-btn {
+  font-family: 'Cabin Condensed';
+  border-radius: 5px;
+  width: 91px;
+  height: 35px;
+  font-size: 19px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  bottom: -15px;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.hide-initial-data-btn {
+  font-family: 'Cabin Condensed';
+  border-radius: 5px;
+  width: 91px;
+  height: 35px;
+  font-size: 19px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.search-button:hover {
+  cursor: pointer;
+}
+
+.show-initial-data-btn:hover, .hide-initial-data-btn:hover {
+  cursor: pointer;
+  background-color: palegoldenrod;
+}
+
+.artist-name-and-data {
+  margin-top: 20px;   
+}
+
+.artist-name {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  width: 445px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.check-out {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.read-and-link-container {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  padding: 2px 25px;
+}
+
+.performance-info {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px; 
+  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+main {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px; 
+  height: 260px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main, h2 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.906);
+}
+
+h1 {
+  font-size: 110px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+
+/*  size of input */
+.query {
+  display: inline-block;
+  width: 350px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+input[type="text"] {
+  font-size: 25px;
+}
+
+.search-button {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100px;
+  height: 45px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-family: 'Cabin Condensed';
+  font-size: 20px;
+  border: 1px solid white;
+  background-color: white;
+  position: relative;
+  left: 6px;
+  bottom: 3px;
+}
+
+.search-results {
+  position: relative;
+  top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+}
+
+.initial-iframe {
+  position: relative; 
+  top: -25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 445px;
+  height: 250px;
+}
+
+.related-search-results {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  display: block;
+  width: 425px;
+  margin: auto;
+  margin-top: -25px;
+  box-sizing: border-box;
+  padding-left: 25px;
+}
+
+.related-music-container {
+  width: 189px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.center-link, .center-check-out {
+  text-align: center;
+}
+
+a {
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+.related-artist-name:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.read-link:hover, .ticket-link:hover {
+  color: white;
+}
+
+p {
+  font-size: 19px;
+}
+
+.tease-read {
+  position:relative; 
+  top:6px;
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-search-results {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 5px; 
+  height: 75px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 100px;
+}
+
+/* Media queries */
+
+@media only screen and (min-width: 320px) {
+  main {
+    width: 305px; 
+    height: 200px;
+  }
+   
+  .query {
+    width: 235px;
+    height: 42px;
+    display: inline-block;
+    border: 1px solid white;
+  }
+
+  input[type="text"] {
+    font-size: 22px;
+  }
+
+  .initial-data {
+    overflow: hidden;
+    max-height: 60px;
+    margin-top: -10px;
+    width: 271px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .active {
+    max-height: 4400px;
+    transition: max-height 1s;
+  }
+
+  .search-button {
+    width: 100px;
+    height: 42px;
+    font-size: 20px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 2px;
+    border: 1px solid white;
+  }
+
+  .search-results {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 305px;
+  }
+
+  h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 45px;
+  }
+  
+  h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .initial-iframe {
+    display: block;
+    width: 280px; 
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .artist-name {
+    width: 80%;    
+  }
+
+  .check-out {
+    width: 215px;
+  }
+
+  .read-and-link-container {
+    width: 272px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 7px;
+  }
+
+  .performance-info { 
+    width: 272px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 7px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 20px;
+    position: relative;
+  }
+
+  .related-search-results {
+    width: 275px;
+    display: block;
+    position: relative;
+    margin: auto;
+  }
+
+  .related-music-container {
+    width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    /* margin-left: -9px; */
+  }
+
+  .show-initial-data-btn {
+    width: 90px;
+    height: 40px;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hide-initial-data-btn {
+    width: 90px;
+    height: 40px;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -1px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .no-search-results {
+    height: 58px;
+    width: 300px;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+} 
+
+@media only screen and (min-width: 530px) {
+  .hide-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .hide-overflow + .center-link {
+    display: none;
+  }
+  
+  /* artist information slides up & down */
+  .initial-data {
     max-height: 97px;
     overflow: hidden;
     transition: max-height 1s;
     margin-top: -15px;
-}
-
-.active .hide-initial-data-btn {
+    width: 470px;
+  }
+  
+  .active .hide-initial-data-btn {
     display: block;
-}
-
-.active {
+  }
+  
+  .active {
     max-height: 1400px;
-}
-
-.show-initial-data-btn {
+  }
+  
+  .show-initial-data-btn {
     font-family: 'Cabin Condensed';
     border-radius: 5px;
     width: 91px;
@@ -64,11 +473,9 @@ a[href^='http']::after {
     margin-right: auto;
     position: relative;
     bottom: -15px;
-    background-color: white;
-    border: 1px solid white;
-}
-
-.hide-initial-data-btn {
+  }
+  
+  .hide-initial-data-btn {
     font-family: 'Cabin Condensed';
     border-radius: 5px;
     width: 91px;
@@ -78,116 +485,107 @@ a[href^='http']::after {
     margin-left: auto;
     margin-right: auto;
     margin-top: 55px;
-    background-color: white;
-    border: 1px solid white;
-}
-
-.search-button:hover {
-    cursor: pointer;
-}
-
-.show-initial-data-btn:hover, .hide-initial-data-btn:hover {
-    cursor: pointer;
-    background-color: palegoldenrod;
-}
-
-.artist-name-and-data {
+  }
+  
+  .artist-name-and-data {
     margin-top: 20px;   
-}
-
-.artist-name {
+  }
+  
+  .artist-name {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     width: 445px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.check-out {
+  }
+  
+  .check-out {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     width: 240px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.read-and-link-container {
+  }
+  
+  .read-and-link-container {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     padding: 2px 25px;
-}
-
-.performance-info {
+    width: 445px;
+    padding-bottom: 7px;
+  }
+  
+  .performance-info {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     padding-left: 25px;
     padding-right: 25px;
-}
-
-main {
+    width: 445px;
+  }
+  
+  main {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
     height: 260px;
-    width: 500px;
+    width: 520px;
     margin-left: auto;
     margin-right: auto;
-}
-
-main, h2 {
+  }
+  
+  main, h2 {
     text-align: center;
     color: rgba(0, 0, 0, 0.906);
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 110px;
     margin-bottom: 10px;
-}
-
-h2 {
+  }
+  
+  h2 {
     font-size: 60px;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 30px;
     text-align: center;
-}
-
-.container {
+  }
+  
+  .container {
     text-align: center;
     position: relative;
     top: 50px;
-}
-
-/*  size of input */
-.query {
+  }
+  
+  /*  size of input */
+  .query {
     display: inline-block;
     width: 350px;
     height: 45px;
     border-radius: 5px;
     border: 1px solid white;
-}
-
-input[type="text"] {
+  }
+  
+  input[type="text"] {
     font-size: 25px;
-}
-
-.search-button {
+  }
+  
+  .search-button {
     display: inline-block;
     width: 100px;
     height: 45px;
     border-radius: 5px;
     margin-top: 15px;
     font-family: 'Cabin Condensed';
-    font-size: 20px;
+    font-size: 22px;
     border: 1px solid white;
-    background-color: white;
     position: relative;
     left: 6px;
-    bottom: 3px;
-}
-
-.search-results {
+    bottom: 2.4px;
+  }
+  
+  .search-results {
     position: relative;
     top: 75px;
     margin-left: auto;
@@ -196,9 +594,9 @@ input[type="text"] {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 50px;
-}
-
-.initial-iframe {
+  }
+  
+  .initial-iframe {
     position: relative; 
     top: -25px;
     display: block;
@@ -206,9 +604,9 @@ input[type="text"] {
     margin-right: auto;
     width: 445px;
     height: 250px;
-}
-
-.related-search-results {
+  }
+  
+  .related-search-results {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px;
     columns: 2;
@@ -220,51 +618,43 @@ input[type="text"] {
     margin-top: -25px;
     box-sizing: border-box;
     padding-left: 25px;
-}
-
-.related-music-container {
+  }
+  
+  .related-music-container {
     width: 189px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-.center-link, .center-check-out {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    left: 1px;
+  }
+  
+  .center-link, .center-check-out {
     text-align: center;
-}
-
-a {
+  }
+  
+  a {
     font-size: 25px;
     color: black;
     text-decoration: none;
-}
-
-.related-artist-name:hover {
-    color: white;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.read-link:hover, .ticket-link:hover {
-    color: white;
-}
-
-p {
+  }
+  
+  p {
     font-size: 19px;
-}
-
-.tease-read {
+  }
+  
+  .tease-read {
     position:relative; 
     top:6px;
     margin-top: 0;
-}
-
-.hidden {
+  }
+  
+  .hidden {
     display: none;
-}
-
-.no-search-results {
+  }
+  
+  .no-search-results {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
     height: 75px;
@@ -273,547 +663,158 @@ p {
     margin-right: auto;
     position: relative;
     top: 100px;
-}
-
-/* Media queries */
-
-@media only screen and (min-width: 320px) {
-    main {
-        width: 305px; 
-        height: 200px;
-    }
-   
-    .query {
-        width: 235px;
-        height: 42px;
-        display: inline-block;
-        border: 1px solid white;
-    }
-
-    input[type="text"] {
-        font-size: 22px;
-    }
-
-    .initial-data {
-        overflow: hidden;
-        max-height: 60px;
-        margin-top: -10px;
-        width: 271px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .active {
-        max-height: 4400px;
-        transition: max-height 1s;
-    }
-
-    .search-button {
-        width: 100px;
-        height: 42px;
-        font-size: 20px;
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        bottom: 2px;
-        border: 1px solid white;
-    }
-
-    .search-results {
-        position: relative;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 305px;
-    }
-
-    h1 {
-        font-size: 58px;
-        margin-bottom: 20px;
-    }
-    
-    h2 {
-        font-size: 45px;
-    }
-    
-    h3 {
-        font-size: 25px;
-        text-align: center;
-    }
-
-    .initial-iframe {
-        display: block;
-        width: 280px; 
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .artist-name {
-        width: 80%;    
-    }
-
-    .check-out {
-        width: 215px;
-    }
-
-    .read-and-link-container {
-        width: 272px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 7px;
-    }
-
-    .performance-info { 
-        width: 272px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 7px;
-    }
-
-    p {
-        font-size: 18px;
-    }
-
-    a {
-        font-size: 20px;
-        position: relative;
-    }
-
-    .related-search-results {
-        width: 275px;
-        display: block;
-        position: relative;
-        margin: auto;
-    }
-
-    .related-music-container {
-        width: 130px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        position: relative;
-        /* margin-left: -9px; */
-    }
-
-    .show-initial-data-btn {
-        width: 90px;
-        height: 40px;
-        font-size: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hide-initial-data-btn {
-        width: 90px;
-        height: 40px;
-        font-size: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        top: -1px;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .no-search-results {
-        height: 58px;
-        width: 300px;
-        margin: auto;
-        margin-left: auto;
-        margin-right: auto;
-    }
-} 
-
-@media only screen and (min-width: 530px) {
-    .hide-overflow {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    
-    .hide-overflow + .center-link {
-        display: none;
-    }
-    
-    /* artist information slides up & down */
-    .initial-data {
-        max-height: 97px;
-        overflow: hidden;
-        transition: max-height 1s;
-        margin-top: -15px;
-        width: 470px;
-    }
-    
-    .active .hide-initial-data-btn {
-        display: block;
-    }
-    
-    .active {
-        max-height: 1400px;
-    }
-    
-    .show-initial-data-btn {
-        font-family: 'Cabin Condensed';
-        border-radius: 5px;
-        width: 91px;
-        height: 35px;
-        font-size: 19px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        bottom: -15px;
-    }
-    
-    .hide-initial-data-btn {
-        font-family: 'Cabin Condensed';
-        border-radius: 5px;
-        width: 91px;
-        height: 35px;
-        font-size: 19px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 55px;
-    }
-    
-    .artist-name-and-data {
-        margin-top: 20px;   
-    }
-    
-    .artist-name {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px;
-        width: 445px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .check-out {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px;
-        width: 240px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .read-and-link-container {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px;
-        padding: 2px 25px;
-        width: 445px;
-        padding-bottom: 7px;
-    }
-    
-    .performance-info {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px; 
-        padding-bottom: 7px;
-        padding-left: 25px;
-        padding-right: 25px;
-        width: 445px;
-    }
-    
-    main {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px; 
-        height: 260px;
-        width: 520px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    main, h2 {
-        text-align: center;
-        color: rgba(0, 0, 0, 0.906);
-    }
-    
-    h1 {
-        font-size: 110px;
-        margin-bottom: 10px;
-    }
-    
-    h2 {
-        font-size: 60px;
-    }
-    
-    h3 {
-        font-size: 30px;
-        text-align: center;
-    }
-    
-    .container {
-        text-align: center;
-        position: relative;
-        top: 50px;
-    }
-    
-    /*  size of input */
-    .query {
-        display: inline-block;
-        width: 350px;
-        height: 45px;
-        border-radius: 5px;
-        border: 1px solid white;
-    }
-    
-    input[type="text"] {
-        font-size: 25px;
-    }
-    
-    .search-button {
-        display: inline-block;
-        width: 100px;
-        height: 45px;
-        border-radius: 5px;
-        margin-top: 15px;
-        font-family: 'Cabin Condensed';
-        font-size: 22px;
-        border: 1px solid white;
-        position: relative;
-        left: 6px;
-        bottom: 2.4px;
-    }
-    
-    .search-results {
-        position: relative;
-        top: 75px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 500px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 50px;
-    }
-    
-    .initial-iframe {
-        position: relative; 
-        top: -25px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 445px;
-        height: 250px;
-    }
-    
-    .related-search-results {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px;
-        columns: 2;
-        -webkit-columns: 2;
-        -moz-columns: 2;
-        display: block;
-        width: 425px;
-        margin: auto;
-        margin-top: -25px;
-        box-sizing: border-box;
-        padding-left: 25px;
-    }
-    
-    .related-music-container {
-        width: 189px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        position: relative;
-        left: 1px;
-    }
-    
-    .center-link, .center-check-out {
-        text-align: center;
-    }
-    
-    a {
-        font-size: 25px;
-        color: black;
-        text-decoration: none;
-    }
-    
-    p {
-        font-size: 19px;
-    }
-    
-    .tease-read {
-        position:relative; 
-        top:6px;
-        margin-top: 0;
-    }
-    
-    .hidden {
-        display: none;
-    }
-    
-    .no-search-results {
-        background-color: rgba(255,255,255,0.3);
-        border-radius: 5px; 
-        height: 75px;
-        width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        top: 100px;
-    }
+  }
 }
 
 @media only screen and (min-width: 750px) {
-    main {
-        width: 730px; 
-        height: 330px;
-    }
+  main {
+    width: 730px; 
+    height: 330px;
+  }
    
-    .query {
-        width: 450px;
-        height: 65px;
-        display: inline-block;
-        border: 1px solid white;
-    }
+  .query {
+    width: 450px;
+    height: 65px;
+    display: inline-block;
+    border: 1px solid white;
+  }
 
-    input[type="text"] {
-        font-size: 45px;
-    }
+  input[type="text"] {
+    font-size: 45px;
+  }
 
-    .initial-data {
-        overflow: hidden;
-        margin-top: -15px;
-        width: 700px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .initial-data {
+    overflow: hidden;
+    margin-top: -15px;
+    width: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .active {
-        max-height: 4400px;
-        transition: max-height 1s;
-    }
+  .active {
+    max-height: 4400px;
+    transition: max-height 1s;
+  }
 
-    .search-button {
-        width: 175px;
-        height: 65px;
-        font-size: 35px;
-        display: inline-block;
-        margin-left: 9px;
-        position: relative;
-        bottom: 5px;
-        border: 1px solid white;
-    }
+  .search-button {
+    width: 175px;
+    height: 65px;
+    font-size: 35px;
+    display: inline-block;
+    margin-left: 9px;
+    position: relative;
+    bottom: 5px;
+    border: 1px solid white;
+  }
 
-    .search-results {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-        width: 800px;
-    }
+  .search-results {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+  }
 
-    h1 {
-        font-size: 130px;
-        margin-bottom: 30px;
-    }
-    
-    h2 {
-        font-size: 65px;
-    }
-    
-    h3 {
-        font-size: 40px;
-        text-align: center;
-    }
+  h1 {
+    font-size: 130px;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 65px;
+  }
+  
+  h3 {
+    font-size: 40px;
+    text-align: center;
+  }
 
-    .initial-iframe {
-        display: block;
-        width: 623px; 
-        height: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .initial-iframe {
+    display: block;
+    width: 623px; 
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .artist-name {
-        width: 68%;    
-    }
+  .artist-name {
+    width: 68%;    
+  }
 
-    .check-out {
-        width: 300px;
-    }
+  .check-out {
+    width: 300px;
+  }
 
-    .read-and-link-container {
-        width: 680px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 10px;
-    }
+  .read-and-link-container {
+    width: 680px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
 
-    .performance-info {
-        display: block;
-        width: 680px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 10px;
-    }
+  .performance-info {
+    display: block;
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
 
-    p {
-        font-size: 27px;
-    }
+  p {
+    font-size: 27px;
+  }
 
-    a {
-        font-size: 40px;
-    }
+  a {
+    font-size: 40px;
+  }
 
-    .related-search-results {
-        width: 650px;
-        display: block;
-        position: relative;
-        margin: auto;
-        padding-left: 30px;
-    }
+  .related-search-results {
+    width: 650px;
+    display: block;
+    position: relative;
+    margin: auto;
+    padding-left: 30px;
+  }
 
-    .related-music-container {
-        width: 302px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        position: relative;
-        left: 1px;
-    }
+  .related-music-container {
+    width: 302px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    left: 1px;
+  }
 
-    .show-initial-data-btn {
-        width: 121px;
-        height: 55px;
-        font-size: 27px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .hide-initial-data-btn {
-        display: none;
-        width: 121px;
-        height: 55px;
-        font-size: 27px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .show-initial-data-btn {
+    width: 121px;
+    height: 55px;
+    font-size: 27px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hide-initial-data-btn {
+    display: none;
+    width: 121px;
+    height: 55px;
+    font-size: 27px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .hidden {
-        display: none;
-    }
+  .hidden {
+    display: none;
+  }
 
-    .no-search-results {
-        height: 110px;
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .no-search-results {
+    height: 110px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
