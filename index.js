@@ -1,3 +1,5 @@
+/* global moment */
+
 'use strict';
 
 const TASTEDIVE_CONFIG = {
