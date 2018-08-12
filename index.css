@@ -670,6 +670,7 @@ p {
   main {
     width: 730px; 
     height: 330px;
+    padding: 0px 15px 0px 15px;
   }
    
   .query {
@@ -700,7 +701,7 @@ p {
   .search-button {
     width: 175px;
     height: 65px;
-    font-size: 35px;
+    font-size: 22px;
     display: inline-block;
     margin-left: 9px;
     position: relative;
