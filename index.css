@@ -169,7 +169,7 @@ h3 {
 }
 
 input[type="text"] {
-  font-size: 25px;
+  font-size: 32px;
 }
 
 .search-button {
@@ -291,9 +291,9 @@ p {
     border: 1px solid white;
   }
 
-  input[type="text"] {
+  /* input[type="text"] {
     font-size: 22px;
-  }
+  } */
 
   .initial-data {
     overflow: hidden;
@@ -567,9 +567,9 @@ p {
     border: 1px solid white;
   }
   
-  input[type="text"] {
+  /* input[type="text"] {
     font-size: 25px;
-  }
+  } */
   
   .search-button {
     display: inline-block;
@@ -680,9 +680,9 @@ p {
     border: 1px solid white;
   }
 
-  input[type="text"] {
+  /* input[type="text"] {
     font-size: 45px;
-  }
+  } */
 
   .initial-data {
     overflow: hidden;
