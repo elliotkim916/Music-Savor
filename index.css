@@ -291,7 +291,7 @@ input[type="text"] {
   } */
 
   /* input[type="text"] {
-    /* font-size: 23px; */
+    font-size: 23px;
   } */
 
   .initial-data {
@@ -312,7 +312,7 @@ input[type="text"] {
   /* .search-button {
     width: 100px;
     height: 42px;
-    /* font-size: 20px; */
+    font-size: 20px; 
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -433,9 +433,9 @@ input[type="text"] {
 } 
 
 @media only screen and (min-width: 530px) {
-  input[type="text"] {
-    /* font-size: 27px; */
-  }
+  /* input[type="text"] {
+     font-size: 27px; 
+  } */
 
   .hide-overflow {
     overflow: hidden;
@@ -576,7 +576,7 @@ input[type="text"] {
     border-radius: 5px;
     margin-top: 15px;
     font-family: 'Cabin Condensed';
-    /* font-size: 22px; */
+    font-size: 22px; 
     border: 1px solid white;
     position: relative;
     left: 6px;
@@ -695,7 +695,7 @@ input[type="text"] {
   /* .search-button {
     width: 175px;
     height: 65px;
-    /* font-size: 30px; */
+    font-size: 30px; 
     display: inline-block;
     margin-left: 9px;
     position: relative;
