@@ -176,7 +176,7 @@ h3 {
   border-radius: 5px;
   margin-top: 15px;
   font-family: 'Cabin Condensed';
-  font-size: 20px;
+  /* font-size: 20px; */
   border: 1px solid white;
   background-color: white;
   position: relative;
@@ -287,7 +287,7 @@ p {
   }
 
   input[type="text"] {
-    font-size: 30px;
+    /* font-size: 23px; */
   }
 
   .initial-data {
@@ -308,7 +308,7 @@ p {
   .search-button {
     width: 100px;
     height: 42px;
-    font-size: 20px;
+    /* font-size: 20px; */
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -430,7 +430,7 @@ p {
 
 @media only screen and (min-width: 530px) {
   input[type="text"] {
-    font-size: 27px;
+    /* font-size: 27px; */
   }
 
   .hide-overflow {
@@ -572,7 +572,7 @@ p {
     border-radius: 5px;
     margin-top: 15px;
     font-family: 'Cabin Condensed';
-    font-size: 22px;
+    /* font-size: 22px; */
     border: 1px solid white;
     position: relative;
     left: 6px;
@@ -675,7 +675,7 @@ p {
   }
 
   input[type="text"] {
-    font-size: 40px;
+    /* font-size: 40px; */
   }
 
   .initial-data {
@@ -695,7 +695,7 @@ p {
   .search-button {
     width: 175px;
     height: 65px;
-    font-size: 30px;
+    /* font-size: 30px; */
     display: inline-block;
     margin-left: 9px;
     position: relative;
