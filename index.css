@@ -434,6 +434,18 @@ p {
   }
 } 
 
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) {
+  .search-button {
+    font-size: 22px;
+  }
+
+  input[type="text"] {
+    font-size: 42px;
+  }
+}
+
 @media only screen and (min-width: 530px) {
   input[type="text"] {
     font-size: 27px;
@@ -571,10 +583,6 @@ p {
     border: 1px solid white;
   }
   
-  /* input[type="text"] {
-    font-size: 25px;
-  } */
-  
   .search-button {
     display: inline-block;
     width: 100px;
@@ -685,7 +693,7 @@ p {
   }
 
   input[type="text"] {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .initial-data {
@@ -705,7 +713,7 @@ p {
   .search-button {
     width: 175px;
     height: 65px;
-    font-size: 22px;
+    font-size: 30px;
     display: inline-block;
     margin-left: 9px;
     position: relative;
