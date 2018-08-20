@@ -277,6 +277,16 @@ p {
 }
 
 /* Media queries */
+@media only screen and (min-width: 350px) {
+  input[type="text"] {
+    font-size: 35px;
+  }
+
+  main {
+    width: 305px; 
+    height: 230px;
+  }
+}
 @media only screen and (min-width: 370px) {
   main {
     width: 305px; 
