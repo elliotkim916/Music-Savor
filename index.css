@@ -168,10 +168,6 @@ h3 {
   border: 1px solid white;
 }
 
-input[type="text"] {
-  font-size: 32px;
-}
-
 .search-button {
   box-sizing: border-box;
   display: inline-block;
@@ -277,20 +273,6 @@ p {
 }
 
 /* Media queries */
-@media only screen and (max-width: 370px) {
-  main {
-    height: 230px;
-  }
-
-  input[type="text"] {
-    font-size: 30px;
-  }
-
-  .search-button {
-    font-size: 20px;
-  }
-}
-
 @media only screen and (min-width: 370px) {
   main {
     width: 305px; 
@@ -411,7 +393,6 @@ p {
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
-    /* margin-left: -9px; */
   }
 
   .show-initial-data-btn {
@@ -446,18 +427,6 @@ p {
     margin-right: auto;
   }
 } 
-
-@media only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px) {
-  .search-button {
-    font-size: 22px;
-  }
-
-  input[type="text"] {
-    font-size: 42px;
-  }
-}
 
 @media only screen and (min-width: 530px) {
   input[type="text"] {
