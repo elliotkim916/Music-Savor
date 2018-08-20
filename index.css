@@ -162,8 +162,8 @@ h3 {
 /*  size of input */
 .query {
   display: inline-block;
-  width: 350px;
-  height: 45px;
+  width: 450px;
+  height: 65px;
   border-radius: 5px;
   border: 1px solid white;
 }
@@ -171,8 +171,8 @@ h3 {
 .search-button {
   box-sizing: border-box;
   display: inline-block;
-  width: 100px;
-  height: 45px;
+  width: 175px;
+  height: 65px;
   border-radius: 5px;
   margin-top: 15px;
   font-family: 'Cabin Condensed';
@@ -283,16 +283,16 @@ input[type="text"] {
     height: 200px;
   }
    
-  .query {
+  /* .query {
     width: 235px;
     height: 42px;
     display: inline-block;
     border: 1px solid white;
-  }
+  } */
 
-  input[type="text"] {
+  /* input[type="text"] {
     /* font-size: 23px; */
-  }
+  } */
 
   .initial-data {
     overflow: hidden;
@@ -309,7 +309,7 @@ input[type="text"] {
     transition: max-height 1s;
   }
 
-  .search-button {
+  /* .search-button {
     width: 100px;
     height: 42px;
     /* font-size: 20px; */
@@ -319,7 +319,7 @@ input[type="text"] {
     position: relative;
     bottom: 0px;
     border: 1px solid white;
-  }
+  } */
 
   .search-results {
     position: relative;
@@ -561,15 +561,15 @@ input[type="text"] {
   }
   
   /*  size of input */
-  .query {
+  /* .query {
     display: inline-block;
     width: 350px;
     height: 45px;
     border-radius: 5px;
     border: 1px solid white;
-  }
+  } */
   
-  .search-button {
+  /* .search-button {
     display: inline-block;
     width: 100px;
     height: 45px;
@@ -581,7 +581,7 @@ input[type="text"] {
     position: relative;
     left: 6px;
     bottom: 0px;
-  }
+  } */
   
   .search-results {
     position: relative;
@@ -671,12 +671,12 @@ input[type="text"] {
     padding: 0px 15px 0px 15px;
   }
    
-  .query {
+  /* .query {
     width: 450px;
     height: 65px;
     display: inline-block;
     border: 1px solid white;
-  }
+  } */
 
   .initial-data {
     overflow: hidden;
@@ -692,7 +692,7 @@ input[type="text"] {
     transition: max-height 1s;
   }
 
-  .search-button {
+  /* .search-button {
     width: 175px;
     height: 65px;
     /* font-size: 30px; */
@@ -701,7 +701,7 @@ input[type="text"] {
     position: relative;
     bottom: 0px;
     border: 1px solid white;
-  }
+  } */
 
   .search-results {
     position: relative;
