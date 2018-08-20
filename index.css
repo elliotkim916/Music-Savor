@@ -291,9 +291,9 @@ p {
     border: 1px solid white;
   }
 
-  /* input[type="text"] {
-    font-size: 22px;
-  } */
+  input[type="text"] {
+    font-size: 23px;
+  }
 
   .initial-data {
     overflow: hidden;
@@ -435,6 +435,10 @@ p {
 } 
 
 @media only screen and (min-width: 530px) {
+  input[type="text"] {
+    font-size: 27px;
+  }
+
   .hide-overflow {
     overflow: hidden;
     white-space: nowrap;
@@ -680,9 +684,9 @@ p {
     border: 1px solid white;
   }
 
-  /* input[type="text"] {
+  input[type="text"] {
     font-size: 45px;
-  } */
+  }
 
   .initial-data {
     overflow: hidden;
@@ -701,7 +705,7 @@ p {
   .search-button {
     width: 175px;
     height: 65px;
-    font-size: 22px;
+    font-size: 30px;
     display: inline-block;
     margin-left: 9px;
     position: relative;
