@@ -277,16 +277,20 @@ p {
 }
 
 /* Media queries */
-@media only screen and (min-width: 350px) {
-  input[type="text"] {
-    font-size: 35px;
-  }
-
+@media only screen and (max-width: 370px) {
   main {
-    width: 305px; 
     height: 230px;
   }
+
+  input[type="text"] {
+    font-size: 30px;
+  }
+
+  .search-button {
+    font-size: 20px;
+  }
 }
+
 @media only screen and (min-width: 370px) {
   main {
     width: 305px; 
