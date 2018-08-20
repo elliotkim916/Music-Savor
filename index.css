@@ -434,23 +434,6 @@ p {
   }
 } 
 
-@media only screen and (max-width: 414px) {
-  input[type="text"] {
-    font-size: 46px;
-  }
-
-  .search-button {
-    width: 175px;
-    height: 65px;
-    font-size: 25px;
-    display: inline-block;
-    margin-left: 9px;
-    position: relative;
-    bottom: 5px;
-    border: 1px solid white;
-  }
-}
-
 @media only screen and (min-width: 530px) {
   input[type="text"] {
     font-size: 27px;
@@ -702,7 +685,7 @@ p {
   }
 
   input[type="text"] {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .initial-data {
@@ -722,7 +705,7 @@ p {
   .search-button {
     width: 175px;
     height: 65px;
-    font-size: 30px;
+    font-size: 22px;
     display: inline-block;
     margin-left: 9px;
     position: relative;
