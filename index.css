@@ -286,6 +286,7 @@ input[type="text"] {
 @media only screen and (min-width: 370px) {
   main {
     width: 305px; 
+    padding: 0px 1px 1px 1px;
   }
    
   .initial-data {
@@ -321,7 +322,7 @@ input[type="text"] {
   }
   
   h3 {
-    font-size: 25px;
+    font-size: 17px;
     text-align: center;
   }
 
