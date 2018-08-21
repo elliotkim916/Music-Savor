@@ -279,7 +279,7 @@ p {
 }
 
 input[type="text"] {
-  font-size: 30px;
+  font-size: 25px;
   height: 35px;
   vertical-align: middle;
 }
@@ -291,17 +291,6 @@ input[type="text"] {
     height: 200px;
   }
    
-  /* .query {
-    width: 235px;
-    height: 42px;
-    display: inline-block;
-    border: 1px solid white;
-  } */
-
-  /* input[type="text"] {
-    font-size: 28px;
-  } */
-
   .initial-data {
     overflow: hidden;
     max-height: 60px;
@@ -316,18 +305,6 @@ input[type="text"] {
     max-height: 4400px;
     transition: max-height 1s;
   }
-
-  /* .search-button {
-    width: 100px;
-    height: 42px;
-    font-size: 20px; 
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    bottom: 0px;
-    border: 1px solid white;
-  } */
 
   .search-results {
     position: relative;
@@ -441,10 +418,6 @@ input[type="text"] {
 } 
 
 @media only screen and (min-width: 530px) {
-  /* input[type="text"] {
-     font-size: 27px; 
-  } */
-
   .hide-overflow {
     overflow: hidden;
     white-space: nowrap;
@@ -572,21 +545,7 @@ input[type="text"] {
   .query {
     width: 300px;
   }
-  
-  /* .search-button {
-    display: inline-block;
-    width: 100px;
-    height: 45px;
-    border-radius: 5px;
-    margin-top: 15px;
-    font-family: 'Cabin Condensed';
-    font-size: 22px; 
-    border: 1px solid white;
-    position: relative;
-    left: 6px;
-    bottom: 0px;
-  } */
-  
+    
   .search-results {
     position: relative;
     top: 75px;
@@ -692,17 +651,6 @@ input[type="text"] {
     max-height: 4400px;
     transition: max-height 1s;
   }
-
-  /* .search-button {
-    width: 175px;
-    height: 65px;
-    font-size: 30px; 
-    display: inline-block;
-    margin-left: 9px;
-    position: relative;
-    bottom: 0px;
-    border: 1px solid white;
-  } */
 
   .search-results {
     position: relative;
