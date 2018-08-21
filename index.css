@@ -286,7 +286,7 @@ input[type="text"] {
 @media only screen and (min-width: 370px) {
   main {
     width: 305px; 
-    padding: 0px 1px 1px 1px;
+    padding: 0px 5px 1px 5px;
   }
    
   .initial-data {
@@ -536,6 +536,7 @@ input[type="text"] {
     text-align: center;
     position: relative;
     top: 50px;
+    margin-bottom: 100px;
   }
   
   /*  size of input */
@@ -627,7 +628,7 @@ input[type="text"] {
 @media only screen and (min-width: 750px) {
   main {
     width: 730px; 
-    padding: 0px 15px 0px 15px;
+    padding: 0px 15px 1px 15px;
   }
    
   .query {
