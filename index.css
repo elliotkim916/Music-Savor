@@ -296,9 +296,9 @@ input[type="text"] {
     border: 1px solid white;
   } */
 
-  /* input[type="text"] {
-    font-size: 23px;
-  } */
+  input[type="text"] {
+    font-size: 22px;
+  }
 
   .initial-data {
     overflow: hidden;
