@@ -358,16 +358,16 @@ input[type="text"] {
   }
 
   p {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   a {
-    font-size: 19px;
+    font-size: 15px;
     position: relative;
   }
 
   .related-search-results {
-    width: 277px;
+    width: 280px;
     display: block;
     position: relative;
     margin: auto;
