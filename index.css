@@ -268,7 +268,6 @@ p {
 .no-search-results {
   background-color: rgba(255,255,255,0.3);
   border-radius: 5px; 
-  height: 75px;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -407,8 +406,7 @@ input[type="text"] {
   }
 
   .no-search-results {
-    height: 58px;
-    width: 300px;
+    width: 230px;
     margin: auto;
     margin-left: auto;
     margin-right: auto;
@@ -616,8 +614,7 @@ input[type="text"] {
   .no-search-results {
     background-color: rgba(255,255,255,0.3);
     border-radius: 5px; 
-    height: 75px;
-    width: 400px;
+    width: 380px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -752,8 +749,7 @@ input[type="text"] {
   }
 
   .no-search-results {
-    height: 110px;
-    width: 600px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
