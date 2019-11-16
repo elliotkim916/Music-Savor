@@ -24,12 +24,4 @@ class ShowData {
       }, 800);  
     });
   }
-  
-  showRelatedSearchData() {
-    $('.related-search-results').on('click', '.related-artist-name', function(event) {
-      console.log(event.target.text);
-      this.initiateRequests(event.target.text.toLowerCase());
-      $('.initial-iframe').remove();
-    });
-  }
 }

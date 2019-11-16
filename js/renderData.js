@@ -23,8 +23,7 @@ class RenderData {
     let htmlTemplate = '';
     relatedSearch.forEach(result => htmlTemplate += generateData.generateRelatedSearchResults(result));
     document.querySelector('.related-search-results').innerHTML = htmlTemplate;
-    showData.showRelatedSearchData();
-
+    
     // Seatgeek data
     let numberOfShows = seatgeekData.meta.total;
     let tastediveHtml = '';
