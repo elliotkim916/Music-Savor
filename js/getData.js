@@ -5,7 +5,7 @@ class GetData {
     this.tastediveConfig = {
       baseUrl: 'https://tastedive.com/api',
       endpoint: '/similar'
-    };
+    }; 
 
     this.seatGeekConfig = {
       baseUrl: 'https://api.seatgeek.com/2',

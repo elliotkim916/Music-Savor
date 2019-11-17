@@ -4,8 +4,8 @@ class ShowData {
   showInitialSearchData() {
     $('.no-search-results').addClass('hidden');
 
-    $('.initial-search-results').on('click', '.show-initial-data-btn', function(event) {
-      event.preventDefault();
+    $('.initial-search-results').on('click', '.show-initial-data-btn', function(e) {
+      e.preventDefault();
       $('.js-initial-data').addClass('active');
       $('.show-initial-data-btn').addClass('hidden');
       $('.tease-read').removeClass('hide-overflow');
@@ -13,8 +13,8 @@ class ShowData {
       $('.performance-info').prop('hidden', false);
     });
       
-    $('.initial-search-results').on('click', '.hide-initial-data-btn', function(event) {
-      event.preventDefault();
+    $('.initial-search-results').on('click', '.hide-initial-data-btn', function(e) {
+      e.preventDefault();
       $('.js-initial-data').removeClass('active');
       $('.show-initial-data-btn').removeClass('hidden');
       $('.hide-initial-data-btn').addClass('hidden');
