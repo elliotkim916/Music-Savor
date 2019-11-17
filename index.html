@@ -17,12 +17,12 @@
 		<section class="container" role="region">
 			<form class="js-search-form">
 				<label for="query" class="clip">Search for artist</label>
-				<input type="text" class="js-query query" title="music search" name="music-search" id="query">
-				<button type="submit" role="button" class="search-button">Search</button>
+				<input type="text" class="js-query query" title="music search" name="music-search" id="query" onfocus="this.value=''">
+				<button type="submit" role="button" class="search-button" id="searchButton">Search</button>
 			</form>
 		</section>
 
-		<section class="search-results hidden" role="region">
+		<section class="search-results" role="region">
 			<div class="initial-search-results"></div>
 			<div class="related-search-results"></div>
 		</section>
@@ -31,6 +31,10 @@
 
 		<script src="https://code.jquery.com/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-		<script src="index.js"></script>
+		<script src="js/getData.js"></script>
+		<script src="js/showData.js"></script>
+		<script src="js/generateData.js"></script>
+		<script src="js/renderData.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

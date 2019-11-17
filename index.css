@@ -88,11 +88,15 @@ a[href^='http']::after {
   border: 1px solid white;
 }
 
-.search-button:hover {
-  cursor: pointer;
+.show-initial-data-btn, 
+.hide-initial-data-btn,
+.search-button {
+  transition: 0.4s;
 }
 
-.show-initial-data-btn:hover, .hide-initial-data-btn:hover {
+.show-initial-data-btn:hover, 
+.hide-initial-data-btn:hover, 
+.search-button:hover {
   cursor: pointer;
   background-color: palegoldenrod;
 }
